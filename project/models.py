@@ -22,14 +22,12 @@ class User(UserMixin, db.Model):
     def __repr__(self):
         return f'<User {self.id}: {self.username}>'
 
-class Post(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+class FlashCard(db.Model):
+    title = db.Column(db.String(64))
     body = db.Column(db.String(256))
-    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-
+    
     def __repr__(self):
-        return f'<Post {self.id}: {self.body}>'
+        return f'<Post {self.title}: {self.body}>'
 
 @login.user_loader
 def load_user(id):
