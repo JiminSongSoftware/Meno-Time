@@ -32,7 +32,7 @@ class Notes(db.Model):
     title = db.Column(db.String, unique=True, index=True)
     
     def __repr__(self):
-	reutnr f'<Note: {self.title}>'
+	return f'<Note: {self.title}>'
 @login.user_loader
 def load_user(id):
     return User.query.get(int(id))
