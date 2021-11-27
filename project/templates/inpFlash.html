@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1> Create Flash Cards </h1>
+
+<form method="POST", novalidate>
+	{{ form.hidden_tag() }}
+	
+	<p> {{form.title.label}} <br>
+	{{ from.title(size=32) }} </p>
+	
+	<p> {{ form.body.label }} <br>
+	{{ form.body(size=256) }} </p>
+	
+	<p> {{form.submit() }} </p>
+</form>
+{% endblock %}
