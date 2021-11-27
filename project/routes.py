@@ -68,3 +68,10 @@ def inputflash():
 @myapp_obj.route("/renderFlashCard", methods=['GET', 'POST'])
 def outputflash():
     return render_templates("flashlist.html")
+
+@myapp_obj.route("/shareFlashCard", methods-['GET', 'POST'])
+def shareFlash():
+	form =ShareForm()
+	if form.validate_on_submit():
+	    flash(f'Shared!')
+	    

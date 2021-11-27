@@ -1,4 +1,4 @@
-from myapp import db
+from project import db
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -11,7 +11,10 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(64), unique=True, index=True)
     email = db.Column(db.String(128), unique=True)
     password  = db.Column(db.String(128))
+    toViewFlash = FlashCard()
 
+    def sharedFlash(self, newFlash):
+	self.toViewFlash.append(newFlash)
     def set_password(self, password):
         self.password = generate_password_hash(password)
 
