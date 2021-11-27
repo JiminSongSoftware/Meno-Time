@@ -61,7 +61,7 @@ def inputflash():
 	body = form.body.data
 	flashc = FlashCard(title, body)
 	db.session.add(flashc)
-	db.commit()
+	db.session.commit()
 	return redirect("/home")
     return render_templates('inpFlash.html', form=form)
 
@@ -74,4 +74,11 @@ def shareFlash():
 	form =ShareForm()
 	if form.validate_on_submit():
 	    flash(f'Shared!')
-	    
+	    user = User.query.filter_by(username=form.username.data).first()
+		if user is None:
+			flash('Invalid User')
+			return redirect("/shareFlashCard")
+	    flash = FlashCard.query.filter_by(title=form.title.data).first()	
+	    user.sharedFlash(flash)
+	    return redirect("/shareFlashCard")
+	return render_template('ShareFlash.html', form=form)
