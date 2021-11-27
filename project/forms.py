@@ -19,6 +19,10 @@ class CreateFlash(FlaskForm):
     body = Stringfield('Body', validators=[DataRequired()])
     submit = SubmitField('Create')
 
+class ShareForm(FlaskForm):
+    UserShare = StringField('User', validators=[DataRequired()])
+    FlashTitles = Stringfield('FlashCard', validators=[DataRequired()])
+    submit = SubmitField('Share')
 
 
 

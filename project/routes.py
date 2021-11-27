@@ -64,3 +64,7 @@ def inputflash():
 	db.commit()
 	return redirect("/home")
     return render_templates('inpFlash.html', form=form)
+
+@myapp_obj.route("/renderFlashCard", methods=['GET', 'POST'])
+def outputflash():
+    return render_templates("flashlist.html")
