@@ -1,9 +1,9 @@
-from myapp import myapp_obj
-from myapp.forms import LoginForm
+from project import myapp_obj
+from project.forms import LoginForm
 from flask import render_template, flash, redirect
 
-from myapp import db
-from myapp.models import User, Post
+from project import db
+from project.models import User, Post
 from flask_login import current_user, login_user, logout_user, login_required
 
 @myapp_obj.route("/loggedin")
@@ -34,12 +34,21 @@ def login():
 def getMember(name):
     return 'Hi ' + name
 
-@myapp_obj.route("/")
-def hello():
-    name = 'Thomas'
-    people = {'Carlos' : 54}
-    title = 'My HommePage'
-    posts = [{'author': 'john', 'body': 'Beautiful day in Portland!'},\
-            {'author': 'Susan', 'body': 'Today was a good day!'}]
+@myapp_obj.route("/signup", methods=['GET','POST'])
+def signup():
+    form = SignupForm()
+    if form.validate_on_submit():
+	flash(f'Welcome!')
+	username = form.username.data
+	email = form.email.data
+	password = form.password.data
+	user = User(username, email)
+	db.session.add(user)
+	db.session.commit()
+	return redirect("/login")
+    return render_templates('signup.html', form=form)
 
-    return render_template('hello.html', name=name, people=people, posts=posts)
+@myapp_obj.route("/home", methods=['GET', 'POST']
+def home():
+    return render_template('home.html')
+
