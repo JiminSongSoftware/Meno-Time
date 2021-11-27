@@ -3,7 +3,7 @@ from project.forms import LoginForm
 from flask import render_template, flash, redirect
 
 from project import db
-from project.models import User, Post
+from project.models import User, FlashCard, Notes
 from flask_login import current_user, login_user, logout_user, login_required
 
 @myapp_obj.route("/loggedin")
@@ -52,3 +52,15 @@ def signup():
 def home():
     return render_template('home.html')
 
+@myapp_obj.route("/input_flash", methods=['GET', 'POST'])
+def inputflash():
+    form = CreateFlash()
+    if form.validate_on_submit():
+	flash(f'Added!')
+	title = form.title.data
+	body = form.body.data
+	flashc = FlashCard(title, body)
+	db.session.add(flashc)
+	db.commit()
+	return redirect("/home")
+    return render_templates('inpFlash.html', form=form)
