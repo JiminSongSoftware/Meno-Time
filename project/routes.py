@@ -38,14 +38,14 @@ def getMember(name):
 def signup():
     form = SignupForm()
     if form.validate_on_submit():
-	flash(f'Welcome!')
-	username = form.username.data
-	email = form.email.data
-	password = form.password.data
-	user = User(username, email)
-	db.session.add(user)
-	db.session.commit()
-	return redirect("/login")
+        flash(f'Welcome!')
+        username = form.username.data
+        email = form.email.data
+        password = form.password.data
+        user = User(username, email)
+        db.session.add(user)
+        db.session.commit()
+        return redirect("/login")
     return render_templates('signup.html', form=form)
 
 @myapp_obj.route("/home", methods=['GET', 'POST']
