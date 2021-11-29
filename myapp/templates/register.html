@@ -5,11 +5,8 @@
 	<title>{{ title }}</title>
 </head>
 
-<h1>
-	<a href="/login">Already have an account? Log In</a>
-</h1>
-<p>Let's Get Started!</p><br>
-<p>In order to sign up </p>
+<h2>Sign-Up</h2>
+<p>Let's Get Started!</p>
 <p>Please enter a Username and Password</p>
 <form method = "POST" novalidate >
 	        {{ form.hidden_tag() }}
@@ -22,4 +19,7 @@
 					        <p> {{ form.submit() }} </p>
 
 </form>
+<h2>
+	<a href="/login">Already signed up? Click here to Log In</a>
+</h2>
 {% endblock %}

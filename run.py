@@ -1,4 +1,3 @@
-from project import myapp_obj
-
-myapp_obj.run(debug=True)
-
+from myapp import myapp_obj,db
+db.create_all()
+myapp_obj.run(debug= True)
