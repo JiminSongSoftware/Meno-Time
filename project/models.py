@@ -36,6 +36,9 @@ class FlashCard(db.Model):
     
     def __repr__(self):
         return f'<{self.title}>'
+    def __init__(self, title, body):
+        self.title = title
+        self.body = body
 
 class Notes(db.Model):
     id = db.Column(db.Integer, primary_key=True)

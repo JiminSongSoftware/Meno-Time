@@ -66,7 +66,8 @@ def inputflash():
 
 @myapp_obj.route("/renderFlashCard", methods=['GET', 'POST'])
 def outputflash():
-    return render_template("flashlist.html")
+    cards=[]
+    return render_template("flashlist.html", cards=cards)
 
 @myapp_obj.route("/shareFlashCard", methods=['GET', 'POST'])
 def shareFlash():

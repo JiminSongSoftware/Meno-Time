@@ -1,11 +1,10 @@
-{% extends base.html %}
+{% extends "base.html" %}
 
 {% block content %}
 <h1> Flashcards </h1>
 
 <body>
 	<div>
-	{% with cards = get_cards() %}
 	{% if cards %}
 	<ul>
 	{% for card in cards %}
@@ -15,7 +14,6 @@
         {% else %}
 		<a href="/input_flash"> Add a new Flash Card!</a>
 	{% endif %}
-	{% endwith %}
 	</div>
 </body>
 {% endblock %}
