@@ -1,3 +1,16 @@
 {% extends base.html %}
 <h1>Share This FlashCard!</h1>
 
+<a href="/renderFlashCard"> Back </a>
+<form method="POST", novalidate>
+	{{ form.hidden_tag() }}
+	
+	<p> {{form.UserShare.label}}<br>
+	{{ form.UserShare(size=32) }} </p>
+	
+	<p> {{form.FlashTitles.label}} <br>
+	{{ form.FlashTitles(size=256) }} </p>
+
+	<p> {{form.submit()}} </p>
+</form>
+{% endblock %}

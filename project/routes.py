@@ -78,7 +78,10 @@ def shareFlash():
 		if user is None:
 			flash('Invalid User')
 			return redirect("/shareFlashCard")
-	    flash = FlashCard.query.filter_by(title=form.title.data).first()	
-	    user.sharedFlash(flash)
+	    flash = FlashCard.query.filter_by(title=form.title.data).first()
+		if flash is None:
+			flash('Invalid FlashCard')
+			return redirect("/shareFlashCard")	
+	    user.sharedFlash(flash)	
 	    return redirect("/shareFlashCard")
 	return render_template('ShareFlash.html', form=form)
