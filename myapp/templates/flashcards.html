@@ -1,29 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Hello {{ name }}! This is our Flash Card Feature!</h1>
-<p>Save your Flash Card here! We will organize them for you!</p>
-<form method="POST" novalidate enctype="multipart/form-data">
-        {{ form.hidden_tag() }}
-        {% if form.file.errors %}
-        <ul class="errors">
-                {% for error in form.file.errors %}
-                <li>{{ error }}</li>
-                {% endfor %}
-        </ul>
-        {% endif %}
-        <p> {{ form.file }} </p>
-        <p> {{ form.submit() }} </p>
-</form>
-<p> {{title}} </p>
-<ul>
-        {% for flashCardTitles in cardTitles %}
-        <li>
-                <a href="{{ url_for('showFlashCards', title=flashCardTitles) }}">
-                    {{ flashCardTitles }}
-                </a>
-        </li>
-        {% endfor %}
-</ul>
+    <section>
+        <div class="flashc_container">
+            <div id="create_card">
+                <h2>Create Flashcard</h2>
 
+                <label for="question">Term</label>
+                <textarea id="question" maxlength="200"></textarea>
+                <label for="answer" maxlength="500">Definition</label>
+                <br>
+                <textarea id="answer"></textarea>
+
+                <button id="save_card" class="flashc_btn">Add Card</button> 
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="flashc_container">
+            <div id="flashcards"></div>
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='flashc.js') }}"></script>
 {% endblock %}

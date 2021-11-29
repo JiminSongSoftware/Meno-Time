@@ -93,34 +93,10 @@ def log():
 def logout():
     logout_user()
     return redirect('/')
-
-@myapp_obj.route('/renderFlashCard', methods=['GET', 'POST'])
-def markdownToFlashcard():
-    title = 'Flash Cards'
-    form = uploadForm()
-    if form.validate_on_submit():
-        f = form.file.data
-        filename = secure_filename(f.filename)
-        f.save(os.path.join(basedir, 'flashcards', filename))
-        flash('Uploaded Flash Cards Successfully!')
-
-    filenames = os.listdir(os.path.join(basedir, 'flashcards'))
-    flashCardTitles = list(sorted(re.sub(r"\.md$", "", filename)
-        for filename in filenames if filename.endswith(".md")))
-
-    return render_template('flashcards.html', form=form, title=title, cardTitles=flashCardTitles)
-
-@myapp_obj.route('/FlashCard/<title>')
-def showFlashCards(title):
-    filenames = os.listdir(os.path.join(basedir, 'flashcards'))
-    flashCardTitles = list(sorted(re.sub(r"\.md$", "", filename)
-        for filename in filenames if filename.endswith(".md")))
-
-    if title in flashCardTitles:
-        with open(os.path.join(f"{basedir}/flashcards/{title}.md"), 'r') as f:
-            text = f.read()
-            return render_template('flashcard.html', flashcard=markdown.markdown(text), title=title)
-    return redirect('/')
+@myapp_obj.route('/renderFlashCard')
+def flashcards():
+    title = 'Flashcards'
+    return render_template("flashcards.html", title = title)
 
 @myapp_obj.route('/shareFlash', methods=['GET', 'POST'])
 def shareFlash():
