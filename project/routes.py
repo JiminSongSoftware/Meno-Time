@@ -5,6 +5,8 @@ from flask import render_template, flash, redirect
 from project import db
 from project.models import User, FlashCard, Notes
 from flask_login import current_user, login_user, logout_user, login_required
+import markdown
+import os
 
 @myapp_obj.route("/loggedin")
 @login_required
@@ -48,7 +50,7 @@ def signup():
         return redirect("/login")
     return render_templates('signup.html', form=form)
 
-@myapp_obj.route("/home", methods=['GET', 'POST']
+@myapp_obj.route("/home", methods=['GET', 'POST'])
 def home():
     return render_template('home.html')
 
@@ -71,17 +73,34 @@ def outputflash():
 
 @myapp_obj.route("/shareFlashCard", methods-['GET', 'POST'])
 def shareFlash():
-	form =ShareForm()
-	if form.validate_on_submit():
-	    flash(f'Shared!')
-	    user = User.query.filter_by(username=form.username.data).first()
-		if user is None:
-			flash('Invalid User')
-			return redirect("/shareFlashCard")
-	    flash = FlashCard.query.filter_by(title=form.title.data).first()
-		if flash is None:
-			flash('Invalid FlashCard')
-			return redirect("/shareFlashCard")	
-	    user.sharedFlash(flash)	
-	    return redirect("/shareFlashCard")
-	return render_template('ShareFlash.html', form=form)
+    form =ShareForm()
+    if form.validate_on_submit():
+	flash(f'Shared!')
+	user = User.query.filter_by(username=form.username.data).first()
+	    if user is None:
+		    flash('Invalid User')
+		    return redirect("/shareFlashCard")
+	flash = FlashCard.query.filter_by(title=form.title.data).first()
+             if flash is None:
+	             flash('Invalid FlashCard')
+		     return redirect("/shareFlashCard")
+	user.sharedFlash(flash)
+	return redirect("/shareFlashCard")
+    return render_template('ShareFlash.html', form=form)
+
+@myapp_obj.route('/notes', methods=['GET', 'POST'])
+def renderMarkdown():
+    title='Upload notes:'
+
+    form = FileForm()
+    if form.validate_on_submit():
+        file = form.file.data
+        filename = secure_filename(f.filename)
+        file.save(os.path.join( basedir, 'notes', filename))
+        flash('Uploaded notes successfully')
+
+    filenames = os.listdir(os.path.join(basedir, 'notes'))
+    note_titles = list(sorted(re.sub(r"\.md$", "", filename)
+        for filename in filenames if filename.endswith(".md")))
+
+    return render_template('renderMarkdown.html', form=form, title=title,  note_titles=note_titles)
