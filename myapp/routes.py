@@ -50,6 +50,13 @@ def logout():
     flash('You are logged out', 'error')
     return redirect('/')
 
+@myapp_obj.route("/delete",)
+def delete():
+    user = User.query.filter_by(id=1).delete()
+    db.session.commit()
+    flash('Your account is deleted', 'error')
+    return redirect("/register")
+
 @myapp_obj.route('/renderFlashCard')
 def flashcards():
     title = 'Flashcards'
@@ -77,7 +84,6 @@ def shareFlash():
 
 @myapp_obj.route('/notes', methods=['GET', 'POST'])
 def upload_note():
-    name = 'Jim'
     title='Note Lists'
 
     form = FileForm()
@@ -97,7 +103,6 @@ def upload_note():
         form=form,
         title=title,
         note_titles=note_titles,
-        name=name
     )
 
 @myapp_obj.route('/note/<title>')
