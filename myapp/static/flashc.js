@@ -3,6 +3,11 @@ var contentArray = localStorage.getItem('items') ? JSON.parse(localStorage.getIt
 document.getElementById("save_card").addEventListener("click", () => {
   addFlashcard();
 });
+document.getElementById("delete").addEventListener("click", () => {
+    localStorage.clear();
+    flashcards.innerHTML = '';
+    contentArray = [];
+});
 
 
 
@@ -36,16 +41,18 @@ contentArray.forEach(flashcardMaker);
 
 addFlashcard = () => {
   const question = document.querySelector("#question");
-  const answer = document.querySelector("#answer");
+  const answer   = document.querySelector("#answer");
 
   let flashcard_info = {
     'my_question' : question.value,
-    'my_answer'  : answer.value
+    'my_answer'   : answer.value
   }
-
-  contentArray.push(flashcard_info);
-  localStorage.setItem('items', JSON.stringify(contentArray));
-  flashcardMaker(contentArray[contentArray.length - 1]);
-  question.value = "";
-  answer.value = "";
+  if (flashcard_info['my_question'] && flashcard_info['my_answer']) {
+    contentArray.push(flashcard_info);
+    localStorage.setItem('items', JSON.stringify(contentArray));
+    flashcardMaker(contentArray[contentArray.length - 1]);
+    question.value = "";
+    answer.value   = "";
+  }
+  
 }
