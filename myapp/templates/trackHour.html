@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<body>
+    <style>
+    .h2 {
+        font-size: 200px;
+        }
+    .timer {
+        height: 85%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        align-items: center;
+         justify-content: center;
+         font-family: FranklinGothic, Verdana, Arial, sans-serif;
+        font-size: 120px;
+        font-weight: bold;
+        color: #000;
+}
+    </style>
+    <div>
+        <h2>TrackHours</h2>
+        <form method="POST" action="{{ url_for('custom') }}" style="display:inline"></form>
+            <input name="time" class="time-input" placeholder="e.g. 12/30s/20m/2h">
+            <input type="submit" class="startButton" value="START">
+        </form>
+        <div class ="timer">
+            <p id="time"></p>
+        </div>
+        <div>
+			<a href="/reset">Reset</a>
+		 </div>
+    </div>
+</body>
+{% endblock %}%
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/timer.js') }}"></script>
+<script>
+  var Seconds = {{ num }};
+</script>
+{% endblock %}

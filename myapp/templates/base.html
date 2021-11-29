@@ -10,7 +10,10 @@
 		  
 		</head>
 	 <body style="background-color: bisque;">
-		 <div>
+		<audio id="over_music">
+			<source src="{{ url_for('static', filename='beepbeep.mp3') }}">
+		</audio> 
+		<div>
 			 <a href="/register">Register</a>
 			 <h1>Meno-Time</h1>
 			 <div>
@@ -38,6 +41,9 @@
 		 </div>
 		 <div>
 			<a href="/todolist">To-Do</a>
+		 </div>
+		 <div>
+			<a href="/trackHours">trackHours</a>
 		 </div>
 
 		 {% with messages = get_flashed_messages() %}
