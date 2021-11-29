@@ -11,14 +11,14 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(64), unique=True, index=True)
     email = db.Column(db.String(128), unique=True)
     password  = db.Column(db.String(128))
-    toViewFlash = FlashCard()
-    toViewNote = Notes()
+    toViewFlash = []
+    toViewNote = []
 
     def sharedNotes(self, newNotes):
         self.toViewNote.append(newNotes)
 
     def sharedFlash(self, newFlash):
-	self.toViewFlash.append(newFlash)
+        self.toViewFlash.append(newFlash)
 
     def set_password(self, password):
         self.password = generate_password_hash(password)
@@ -30,17 +30,19 @@ class User(UserMixin, db.Model):
         return f'<User {self.id}: {self.username}>'
 
 class FlashCard(db.Model):
-    title = db.Column(db.String(64), unique =True, index-True)
-    body = db.Column(db.String(256))
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(64), unique=True, index=True)
+    body = db.Column(db.String(128))
     
     def __repr__(self):
         return f'<{self.title}>'
 
 class Notes(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String, unique=True, index=True)
     
     def __repr__(self):
-	return f'<Note: {self.title}>'
+        return f'<Note: {self.title}>'
 @login.user_loader
 def load_user(id):
     return User.query.get(int(id))

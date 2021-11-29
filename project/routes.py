@@ -48,45 +48,44 @@ def signup():
         return redirect("/login")
     return render_templates('signup.html', form=form)
 
-@myapp_obj.route("/home", methods=['GET', 'POST']
+@myapp_obj.route("/home", methods=['GET', 'POST'])
 def home():
-    return render_template('home.html')
+     return render_template('home.html')
 
 @myapp_obj.route("/input_flash", methods=['GET', 'POST'])
 def inputflash():
     form = CreateFlash()
     if form.validate_on_submit():
-	flash(f'Added!')
-	title = form.title.data
-	body = form.body.data
-	flashc = FlashCard(title, body)
-	db.session.add(flashc)
-	db.session.commit()
-	return redirect("/home")
+        title = form.title.data
+        body = form.body.data
+        flashc = FlashCard(title, body)
+        db.session.add(flashc)
+        db.session.commit()
+        return redirect("/home")
     return render_templates('inpFlash.html', form=form)
 
 @myapp_obj.route("/renderFlashCard", methods=['GET', 'POST'])
 def outputflash():
     return render_templates("flashlist.html")
 
-@myapp_obj.route("/shareFlashCard", methods-['GET', 'POST'])
+@myapp_obj.route("/shareFlashCard", methods=['GET', 'POST'])
 def shareFlash():
-	form =ShareForm()
-	if form.validate_on_submit():
-	    user = User.query.filter_by(username=form.User.data).first()
-		if user is None:
-			flash('Invalid User')
-			return redirect("/shareFlashCard")
-	    flash = FlashCard.query.filter_by(title=form.Title.data).first()
-		if flash is None:
-			flash('Invalid FlashCard')
-			return redirect("/shareFlashCard")	
-	    user.sharedFlash(flash)	
-	    flash(f'Shared!')
-            return redirect("/shareFlashCard")
-	return render_template('ShareFlash.html', form=form)
+        form =ShareForm()
+        if form.validate_on_submit():
+                user = User.query.filter_by(username=form.User.data).first()
+                if user is None:
+                     flash('Invalid User')
+                     return redirect("/shareFlashCard")
+                flash = FlashCard.query.filter_by(title=form.Title.data).first()
+                if flash is None:
+                     flash('Invalid FlashCard')
+                     return redirect("/shareFlashCard")
+                user.sharedFlash(flash)	
+                flash(f'Shared!')
+                return redirect("/shareFlashCard")
+        return render_template('ShareFlash.html', form=form)
 
-@myapp_obj.route("/shareNotes", methods=['GET, 'POST'])
+@myapp_obj.route("/shareNotes", methods=['GET', 'POST'])
 def shareNotes():
     form = ShareForm()
     if form.validate_on_submit():
@@ -99,6 +98,6 @@ def shareNotes():
                flash('Invalid Note')
                return redirect("/shareNotes") 
          user.sharedNotes(note)
-	 flash(f'Shared!')
+         flash(f'Shared!')
          return redirect("/shareNotes")
     return render_template("ShareFlash.html", form=form)

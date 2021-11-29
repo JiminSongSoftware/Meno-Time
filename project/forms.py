@@ -15,13 +15,13 @@ class SignupForm(FlaskForm):
     submit = SubmitField('Register')
 
 class CreateFlash(FlaskForm):
-    title = Stringfield('Title', validators=[DataRequired()])
-    body = Stringfield('Body', validators=[DataRequired()])
+    title = StringField('Title', validators=[DataRequired()])
+    body = StringField('Body', validators=[DataRequired()])
     submit = SubmitField('Create')
 
 class ShareForm(FlaskForm):
     User = StringField('User', validators=[DataRequired()])
-    title = Stringfield('Title', validators=[DataRequired()])
+    title = StringField('Title', validators=[DataRequired()])
     submit = SubmitField('Share')
 
 
