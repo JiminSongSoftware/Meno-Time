@@ -130,7 +130,7 @@ def upload_note():
         f.save(os.path.join(
             basedir, 'notes', filename
         ))
-        flash('Uploaded note successfully')
+        flash('-----Note uploaded successfully-----')
 
     filenames = os.listdir(os.path.join(basedir, 'notes'))
     note_titles = list(sorted(re.sub(r"\.md$", "", filename)
@@ -206,23 +206,3 @@ def complete(id):
     db.session.commit()
 
     return redirect(url_for('todolist'))
-
-# @myapp_obj.route('/share-flashcards', methods=['POST'])
-# def share_flashCards():
-#     flashcards = FlashCards.query.all()
-#     if request.method == "POST":
-#         try:
-#             email = str(request.form['email'])
-#             subject = 'Flash Cards'
-#             message = Message(subject, sender="sjm9509@gmail.com", recipients=[email])
-#             message.body = render_template("share_flashcards.html",flashcards=flashcards)
-#             message.html = render_template("share_flashcards.html",flashcards=flashcards)
-#             message.attach = render_template("share_flashcards.html",flashcards=flashcards)
-#             mail.send(message) #Sends email
-#             flash("Flashcards Email Sent!")
-#             return redirect('/')
-
-#         except ConnectionRefusedError as connectionRefusedError_:
-#             return "Failed to send Email. Please try again later!"
-#     else:
-#         return render_template("view_flashcards.html")
