@@ -1,5 +1,5 @@
 from project import myapp_obj
-from project.forms import LoginForm
+from project.forms import LoginForm, SignupForm, CreateFlash, ShareForm
 from flask import render_template, flash, redirect
 
 from project import db
@@ -46,11 +46,11 @@ def signup():
         db.session.add(user)
         db.session.commit()
         return redirect("/login")
-    return render_templates('signup.html', form=form)
+    return render_template('signup.html', form=form)
 
-@myapp_obj.route("/home", methods=['GET', 'POST'])
+@myapp_obj.route("/", methods=['GET', 'POST'])
 def home():
-     return render_template('home.html')
+     return render_template('base.html')
 
 @myapp_obj.route("/input_flash", methods=['GET', 'POST'])
 def inputflash():
@@ -62,11 +62,11 @@ def inputflash():
         db.session.add(flashc)
         db.session.commit()
         return redirect("/home")
-    return render_templates('inpFlash.html', form=form)
+    return render_template('inpFlash.html', form=form)
 
 @myapp_obj.route("/renderFlashCard", methods=['GET', 'POST'])
 def outputflash():
-    return render_templates("flashlist.html")
+    return render_template("flashlist.html")
 
 @myapp_obj.route("/shareFlashCard", methods=['GET', 'POST'])
 def shareFlash():
