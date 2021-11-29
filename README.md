@@ -8,18 +8,18 @@ Our web features
 
   - InputOutputFlashCards
 
-  - shareFlashCards
+  - Change Order
 
-  - renderNotes
+  - Share FlashCards
 
-  - shareNotes
+  - Render Notes
 
-  - pomodoroTimer
+  - ShareNotes
 
   - To-do List
 
-  -
+  - pomodoroTimer
 
-  -
+  - trackHour
 
-  -
+  - visualize Hour
