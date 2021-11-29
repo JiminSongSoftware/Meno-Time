@@ -5,11 +5,11 @@
 <form method="POST", novalidate>
 	{{ form.hidden_tag() }}
 	
-	<p> {{form.UserShare.label}}<br>
-	{{ form.UserShare(size=32) }} </p>
+	<p> {{form.User.label}}<br>
+	{{ form.User(size=32) }} </p>
 	
-	<p> {{form.FlashTitles.label}} <br>
-	{{ form.FlashTitles(size=256) }} </p>
+	<p> {{form.Title.label}} <br>
+	{{ form.Title(size=256) }} </p>
 
 	<p> {{form.submit()}} </p>
 </form>

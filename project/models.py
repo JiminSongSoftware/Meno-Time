@@ -12,9 +12,14 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(128), unique=True)
     password  = db.Column(db.String(128))
     toViewFlash = FlashCard()
+    toViewNote = Notes()
+
+    def sharedNotes(self, newNotes):
+        self.toViewNote.append(newNotes)
 
     def sharedFlash(self, newFlash):
 	self.toViewFlash.append(newFlash)
+
     def set_password(self, password):
         self.password = generate_password_hash(password)
 
