@@ -19,7 +19,7 @@ class FileForm(FlaskForm):
         FileRequired(),
         FileAllowed(['md'], '.md only!')
     ])
-    submit = SubmitField('Upload')
+    submit = SubmitField('Upload .md file')
 
 class uploadForm(FlaskForm):
     file = FileField('Document', validators = [FileRequired(), FileAllowed(['md', 'markdown'], 'Markdown document only!')])

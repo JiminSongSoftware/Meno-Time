@@ -15,52 +15,6 @@ def hello():
     title = 'Meno-Time HomePage'
     return render_template("hello.html", title=title)
 
-
-@myapp_obj.route('/trackHours')
-def trackHours():
-    title = 'trackHours'
-    return render_template("trackHour.html", title=title)
-
-@myapp_obj.route('/reset')
-def index():
-    return redirect(url_for('timer', num=25*60))
-
-
-@myapp_obj.route('/trackHours/<int:num>s')
-@myapp_obj.route('/<int:num>')
-def timer(num):
-    return render_template('base.html', num=num)
-
-
-@myapp_obj.route('/trackHours/custom', methods=['GET', 'POST'])
-def custom():
-    time = request.form.get('time', 180)
-    # use re to validate input data
-    m = re.match('\d+[smh]?$', time)
-    if m is None:
-        flash(u'34、20s、15m、2h')
-        return redirect(url_for('index'))
-    if time[-1] not in 'smh':
-        return redirect(url_for('timer', num=int(time)))
-    else:
-        type = {'s': 'timer', 'm': 'minutes', 'h': 'hours'}
-        return redirect(url_for(type[time[-1]], num=int(time[:-1])))
-
-
-@myapp_obj.route('/trackHours/<int:num>m')
-def minutes(num):
-    return redirect(url_for('timer', num=num*60))
-
-
-@myapp_obj.route('/trackHours/<int:num>h')
-def hours(num):
-    return redirect(url_for('timer', num=num*3600))
-
-@myapp_obj.errorhandler(404)
-def page_not_fouond(e):
-    flash(u': error)')
-    return redirect(url_for('timer', num=244))
-
 @myapp_obj.route('/register' ,methods=['GET','POST'])
 def register():
     form = RegisterForm()
@@ -70,6 +24,7 @@ def register():
         new_user = User(username=form.username.data, password = form.password.data)
         db.session.add(new_user)
         db.session.commit()
+        flash('You are registered', 'error')
         return redirect("/login")
     return render_template("register.html",form=form)
 
@@ -92,7 +47,9 @@ def log():
 @myapp_obj.route('/logout')
 def logout():
     logout_user()
+    flash('You are logged out', 'error')
     return redirect('/')
+
 @myapp_obj.route('/renderFlashCard')
 def flashcards():
     title = 'Flashcards'
@@ -107,7 +64,7 @@ def shareFlash():
             subject = str(request.form['subject'])
             msg_body = str(request.form['message'])
 
-            message = Message(subject, sender="sjm9509@gmail.com", recipients=[email])
+            message = Message(subject, sender="jimin.song.software@gmail.com", recipients=[email])
             message.body = msg_body
             mail.send(message)
             flash("Email Sent!")
@@ -121,7 +78,7 @@ def shareFlash():
 @myapp_obj.route('/notes', methods=['GET', 'POST'])
 def upload_note():
     name = 'Jim'
-    title='Note'
+    title='Note Lists'
 
     form = FileForm()
     if form.validate_on_submit():
@@ -167,7 +124,7 @@ def shareNotes():
             subject = str(request.form['subject'])
             msg_body = str(request.form['message'])
 
-            message = Message(subject, sender="sjm9509@gmail.com", recipients=[email])
+            message = Message(subject, sender="jimin.song.software@gmail.com", recipients=[email])
             message.body = msg_body
             mail.send(message)
             flash("Email Sent!")

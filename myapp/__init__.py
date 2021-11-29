@@ -11,7 +11,7 @@ myapp_obj = flask.Flask(__name__)
 myapp_obj.config['MAIL_SERVER'] = 'smtp.gmail.com'
 myapp_obj.config['MAIL_PORT'] = 465
 myapp_obj.config['MAIL_USERNAME'] = "jimin.song.software@gmail.com"
-myapp_obj.config['MAIL_PASSWORD'] = "uquicqmrsxxnpmmf"
+myapp_obj.config['MAIL_PASSWORD'] = "hnmciiausvxmlvhr"
 myapp_obj.config["MAIL_USE_TLS"] = False
 myapp_obj.config['MAIL_USE_SSL'] = True
 
