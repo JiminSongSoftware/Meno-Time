@@ -135,11 +135,6 @@ def shareNotes():
     else:
         return render_template("shareNote.html",title=title)
 
-@myapp_obj.route('/pomodoroTimer')
-def pomodoroTimer():
-    title = 'pomodoroTimer'
-    return render_template("pomodoroTimer.html",title=title)
-
 @myapp_obj.route('/todolist')
 def todolist():
     title = 'To-Do List'
@@ -163,3 +158,20 @@ def complete(id):
     db.session.commit()
 
     return redirect(url_for('todolist'))
+
+
+@myapp_obj.route('/pomodoroTimer')
+def pomodoroTimer():
+    title = 'Pomodoro Timer'
+    return render_template("pomodoroTimer.html",title=title)
+
+@myapp_obj.route('/trackHours')
+def trackHours():
+    title = 'Track Hours'
+    return render_template("trackHour.html",title=title)
+
+@myapp_obj.route('/visualizeHours')
+def visualizeHours():
+    title = 'Visualize Hours'
+    return render_template("visualizeHour.html",title=title)
+
