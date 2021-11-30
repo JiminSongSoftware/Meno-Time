@@ -4,7 +4,9 @@ Using Flask, SQLAlchemy, and JavaScript
 
 Our web features
 
-  - Register/Login function
+  - Register/Signup Function
+  
+  - Login/Signout Function
 
   - InputOutputFlashCards
 
@@ -13,8 +15,6 @@ Our web features
   - Render Notes
 
   - ShareNotes
-
-  - findText
 
   - To-do List
 
