@@ -125,3 +125,69 @@ def flashcards():
     return render_template("flashcards.html", title = title)
 ```
 
+style.css
+
+```css
+.flashc_btn {
+  padding: 8px;
+  cursor: pointer;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background: aquamarine;
+}
+
+.flashc_btn:hover {
+  background-color: orangered;
+}
+
+.flashc_container {
+  width: 1000px;
+  margin: auto;
+}
+
+#create_card {
+  width: 370px;
+  margin: auto;
+  padding: 20px;
+  margin-top: 10px;
+  background: whitesmoke;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.9);
+}
+
+#create_card h2 {
+  color: black;
+  text-align: center;
+}
+
+#create_card textarea {
+  width: 100%;
+  border-radius: 5px;
+  font-family: inherit;
+  border: 1px solid lightgray;
+}
+
+#create_card button {
+  width: fit-content;
+}
+
+#flashcards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: auto;
+  margin-top: 10px;
+  padding: 0px 10px;
+}
+
+.flashcard {
+  width: 370px;
+  height: 200px;
+  word-wrap: break-word;
+  margin: 10px;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.9);
+}
+```
