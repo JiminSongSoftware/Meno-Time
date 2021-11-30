@@ -106,8 +106,8 @@ function stopInterval()
     clearInterval(startTimer);
 }
 ```
-style.css (trackHour part)
 
+style.css (trackHour part)
 ```css
 .pomodoroTimer_container {
   height: 200px;
@@ -181,4 +181,4 @@ p {
 #stop {
   grid-area: 3 / 4 / 3 / 4;
 }
-'''
+```
