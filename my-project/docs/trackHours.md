@@ -106,3 +106,78 @@ function stopInterval()
     clearInterval(startTimer);
 }
 ```
+style.css (trackHour part)
+'''
+.pomodoroTimer_container {
+  height: 200px;
+  width: 500px;
+  margin-left: 20px;
+  border: 4px solid black;
+  background-color: aquamarine;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+/*timers*/
+.label {
+  align-self: center;
+  justify-self: center;
+  font-family: "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#work {
+  grid-area: 1 / 2 / 1 / 2;
+}
+#break {
+  grid-area: 1 / 4 / 1 / 4;
+}
+
+.pomodoroTimer {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+
+  font-size: 30px;
+  font-weight: bold;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+#work-timer {
+  grid-area: 2 / 2 / 2 / 2;
+}
+
+#break-timer {
+  grid-area: 2 / 4 / 2 / 4;
+}
+
+/*buttons*/
+
+.btn {
+  align-self: center;
+  justify-self: center;
+
+  width: 80px;
+  height: 30px;
+  font-size: 20px;
+}
+
+#start {
+  grid-area: 3 / 2 / 3 / 2;
+}
+
+#reset {
+  grid-area: 3 / 3 / 3 / 3;
+}
+
+#stop {
+  grid-area: 3 / 4 / 3 / 4;
+}
+'''
