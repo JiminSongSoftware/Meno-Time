@@ -345,6 +345,23 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 - Alternate Postconditions: No hours and work are shown. User will not be able to visualize the hours and see the amount of work they have to do each day.
 
 
+###### **16) deleteAccount:**
+
+- Summary: Allows the user to be able to delete their account from our website.
+- Actors: User(student)
+
+- Preconditions: Student must have an account
+- Triggers:  User can select delete account option to delete their account
+- Primary Sequence:
+  1) If user has created an existing account
+  2) They have the option to delete their account
+- Primary Postconditions:
+  1) Then their account will be deleted from the system.
+- Alternate Sequences: User does not have an account so there wont be an account to delete.
+- Alternate Trigger: N/A.
+- Alternate Postconditions: Will not have an account to delete if there is not an account that exists. 
+
+
 
 
 
