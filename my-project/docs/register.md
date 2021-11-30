@@ -62,5 +62,5 @@ register.html
 <h2>
 	<a href="/login">Already signed up? Click here to Log In</a>
 </h2>
-{% endblock %}```html 
+{% endblock %} 
 ```
