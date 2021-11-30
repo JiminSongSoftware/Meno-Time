@@ -60,3 +60,32 @@ logout.html
 <h1>Logout </h1>
 {% endblock %}
 ```
+
+routes.py
+```python
+@myapp_obj.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    getuser=User.query.all()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=form.username.data).first()
+        login_user(user)
+        return redirect('/loggedin')
+    return render_template("login.html", form=form)
+```
+
+```python
+@myapp_obj.route('/loggedin')
+@login_required
+def log():
+    flash('You are logged in', 'error')
+    return redirect('/')
+```
+
+```python
+@myapp_obj.route('/logout')
+def logout():
+    logout_user()
+    flash('You are logged out', 'error')
+    return redirect('/')
+```

@@ -6,9 +6,9 @@ nav:
   - Register: register.md
   - Delete: delete.md
   - InputOutputFlashCards: inputOutputFlashCards.md
-  - Share Flash Card: shareFlashcard.md
-  - RenderNotes: rendernotes.md
-  - Share Notes: sharenotes.md
+  - Share Flash Card: shareFlashcards.md
+  - RenderNotes: renderNotes.md
+  - Share Notes: shareNotes.md
   - To-do List: todolist.md
   - Pomodoro Timer: pomodorotimer.md
   - Track Hour: trackHours.md

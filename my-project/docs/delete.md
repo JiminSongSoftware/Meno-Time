@@ -18,4 +18,12 @@ This is our import Flask library
     from myapp.models import User, Post, todo_list
 ```
 
-We created login
+routes.py
+```python
+@myapp_obj.route("/delete",)
+def delete():
+    user = User.query.filter_by(id=1).delete()
+    db.session.commit()
+    flash('Your account is deleted', 'error')
+    return redirect("/register")
+```
