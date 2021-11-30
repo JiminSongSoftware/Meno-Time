@@ -4,13 +4,12 @@ nav:
   - Home: index.md
   - Login: login.md
   - Register: register.md
+  - Delete: delete.md
   - InputOutputFlashCards: inputOutputFlashCards.md
+  - Share Flash Card: shareFlashcard.md
   - RenderNotes: rendernotes.md
-  - Share Flash Card: shareflashcard.md
   - Share Notes: sharenotes.md
   - To-do List: todolist.md
   - Pomodoro Timer: pomodorotimer.md
-  - ?
-  - ?
-  - ?
+  - Track Hour: trackHours.md
 theme: readthedocs

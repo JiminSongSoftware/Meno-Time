@@ -69,6 +69,7 @@ def shareFlash():
         try:
             email = str(request.form['email'])
             subject = str(request.form['subject'])
+            msg_ans = str(request.form['message'])
             msg_body = str(request.form['message'])
 
             message = Message(subject, sender="jimin.song.software@gmail.com", recipients=[email])
@@ -175,8 +176,8 @@ def trackHours():
     title = 'Track Hours'
     return render_template("trackHour.html",title=title)
 
-@myapp_obj.route('/visualizeHours')
-def visualizeHours():
-    title = 'Visualize Hours'
-    return render_template("visualizeHour.html",title=title)
+# @myapp_obj.route('/visualizeHours')
+# def visualizeHours():
+#     title = 'Visualize Hours'
+#     return render_template("visualizeHour.html",title=title)
 
