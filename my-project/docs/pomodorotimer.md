@@ -18,11 +18,11 @@ This is our import Flask library
     from myapp.models import User, Post, todo_list
 ```
 
-pomodoroTimer.html
 We create a countdown to count the time from 25 min back to zero
 User can reset the time, and pausse the time
 Every 25 min of working, user will have 5 min break.
-
+<p>pomodoroTimer.html</p>
+```html
     <h1>Pomodoro Timer</h1>
 
     <div class="pomodoroTimer_container">
@@ -47,10 +47,10 @@ Every 25 min of working, user will have 5 min break.
         <button id="stop"  class="btn">Pause</button>
         <button id="reset" class="btn">Reset</button>
     </div>
-    
-    pomodoroTimer.js
-    The logic 
-    
+```  
+<p>The logic</p>
+pomodoroTimer.js
+```Javascript
 var start = document.getElementById('start');
 var stop  = document.getElementById('stop');
 var reset = document.getElementById('reset');
@@ -115,3 +115,4 @@ function timer(){
 function stopInterval(){
     clearInterval(startTimer);
 }
+```

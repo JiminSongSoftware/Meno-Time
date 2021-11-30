@@ -21,6 +21,7 @@ This is our import Flask library
 We track the amount of time when user click on start time
 
 trackHour.html
+```html
 <h1>Track Hour</h1>
 <div class="pomodoroTimer_container">
     <p id="work" class="label">Time:</p>
@@ -39,9 +40,9 @@ trackHour.html
     <button id="reset" class="btn">Reset</button>
 </div>
 <script src="{{ url_for('static', filename='trackHour.js') }}"></script>
-
+```
 The time will add 1 second after user click start time, user can also pause and reset the time.
-
+```Javascript
 trackHour.js
 var start = document.getElementById('start');
 var stop  = document.getElementById('stop');
@@ -57,7 +58,7 @@ var ws = document.getElementById('w_seconds');
 var startTimer;
 
 start.addEventListener('click', function(){
-    
+
     //startTimer = setInterval(timer, 1000)
     if(startTimer === undefined){
         startTimer = setInterval(timer, 1000)
@@ -85,7 +86,7 @@ stop.addEventListener('click', function(){
 function timer(){
     //Work Timer Countdown
     ws.innerText++;
-    
+
     if (ws.innerText == 60)
     {
         ws.innerText = 00;
@@ -104,3 +105,4 @@ function stopInterval()
 {
     clearInterval(startTimer);
 }
+```
