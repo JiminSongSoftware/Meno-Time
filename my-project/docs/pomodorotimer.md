@@ -23,32 +23,32 @@ User can reset the time, and pausse the time
 Every 25 min of working, user will have 5 min break.
 <p>pomodoroTimer.html</p>
 ```html
+<h1>Pomodoro Timer</h1>
 
-    <h1>Pomodoro Timer</h1>
+<div class="pomodoroTimer_container">
+    <p id="work" class="label">Time:</p>
+    <p id="break" class="label">Break:</p>
 
-    <div class="pomodoroTimer_container">
-        <p id="work" class="label">Time:</p>
-        <p id="break" class="label">Break:</p>
-
-        <!--Work Timer-->
-        <div id="work-timer" class="pomodoroTimer">
-            <p id="w_minutes">25</p>
-            <p class="semicolon">:</p>
-            <p id="w_seconds">00</p>
-        </div>
+    <!--Work Timer-->
+    <div id="work-timer" class="pomodoroTimer">
+        <p id="w_minutes">25</p>
+        <p class="semicolon">:</p>
+        <p id="w_seconds">00</p>
+    </div>
 
         <!--Break Timer-->
-        <div id="break-timer" class="pomodoroTimer">
-            <p id="b_minutes">05</p>
-            <p class="semicolon">:</p>
-            <p id="b_seconds">00</p>
-        </div>
-
-        <button id="start" class="btn">Start</button>
-        <button id="stop"  class="btn">Pause</button>
-        <button id="reset" class="btn">Reset</button>
+    <div id="break-timer" class="pomodoroTimer">
+        <p id="b_minutes">05</p>
+        <p class="semicolon">:</p>
+        <p id="b_seconds">00</p>
     </div>
+
+    <button id="start" class="btn">Start</button>
+    <button id="stop"  class="btn">Pause</button>
+    <button id="reset" class="btn">Reset</button>
+</div>
 ```  
+
 <p>The logic</p>
 pomodoroTimer.js
 ```Javascript
