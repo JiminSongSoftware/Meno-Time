@@ -18,6 +18,8 @@ This is our import Flask library
     from myapp.models import User, Post, todo_list
 ```
 
+We can input a term with a definition
+
 flashcards.html
 
 ```html
@@ -51,6 +53,8 @@ flashcards.html
 {% endblock %}
 
 ```
+
+This is what creates the flashcard with buttons and textbox that can be used to create the flashcards
 
 flashc.js
 
@@ -124,6 +128,8 @@ def flashcards():
     title = 'Flashcards'
     return render_template("flashcards.html", title = title)
 ```
+
+This is the the box of the flashcard and how they look
 
 style.css
 
