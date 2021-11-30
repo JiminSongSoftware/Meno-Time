@@ -1,6 +1,6 @@
-# Welcome to MkDocs
+# Welcome to Meno-Time
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+For full source code visit [github.com](https://github.com/nguyenbo7/Team11_project).
 
 ## Commands
 
@@ -10,8 +10,54 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 * `MkLorum -h` - Print help message and exit.
 
 ## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+```python
+.
+├── README.md
+├── Specification.md
+├── gantt.xlsx
+├── my-project
+│   ├── docs
+│   │   ├── delete.md
+│   │   ├── index.md
+│   │   ├── inputOutputFlashCards.md
+│   │   ├── login.md
+│   │   ├── pomodorotimer.md
+│   │   ├── register.md
+│   │   ├── renderNotes.md
+│   │   ├── shareFlashcards.md
+│   │   ├── shareNotes.md
+│   │   ├── todolist.md
+│   │   ├── trackHour.md
+│   │   └── trackHours.md
+│   └── mkdocs.yml
+├── myapp
+│   ├── __init__.py
+│   ├── flashcards
+│   ├── forms.py
+│   ├── models.py
+│   ├── notes
+│   │   └── README.md
+│   ├── routes.py
+│   ├── static
+│   │   ├── flashc.js
+│   │   ├── pomodoroTimer.js
+│   │   ├── style.css
+│   │   └── trackHour.js
+│   └── templates
+│       ├── base.html
+│       ├── flashcards.html
+│       ├── hello.html
+│       ├── loggedin.html
+│       ├── login.html
+│       ├── logout.html
+│       ├── note.html
+│       ├── notes.html
+│       ├── pomodoroTimer.html
+│       ├── register.html
+│       ├── shareFlashcards.html
+│       ├── shareNote.html
+│       ├── todolist.html
+│       └── trackHour.html
+├── requirements.txt
+└── run.py
+```

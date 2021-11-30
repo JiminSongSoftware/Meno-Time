@@ -18,4 +18,45 @@ This is our import Flask library
     from myapp.models import User, Post, todo_list
 ```
 
-We created login
+login.html
+```python
+    {% extends "base.html" %}
+
+    {% block content %}
+
+    <h1>Login</h1>
+
+    <form method = "POST" novalidate >
+          {{ form.hidden_tag() }}
+
+    <p> {{ form.username.label }} <br>
+        {{ form.username }}</p>
+
+    <p> {{ form.password.label }} <br>
+        {{ form.password }}</p>
+
+    <p> {{ form.remember_me.label }} <br>
+        {{ form.remember_me() }}</p>
+
+    <p> {{ form.submit() }} </p>
+
+    </form>
+    {% endblock %}
+```
+loggedin.html
+```python
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Welcome</h1>
+<p>{{ title }} </p>
+{% endblock  %}
+```
+logout.html
+```python
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Logout </h1>
+{% endblock %}
+```
