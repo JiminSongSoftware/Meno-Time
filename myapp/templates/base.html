@@ -1,5 +1,5 @@
  <!DOCTYPE html>
- <html>     
+ <html>
 	 <head>
 		{% if title %}
 		 <title>{{ title }}!</title>
@@ -17,9 +17,11 @@
 			</style>
 		<audio id="over_music">
 			<source src="{{ url_for('static', filename='beepbeep.mp3') }}">
-		</audio> 
+		</audio>
 		<div>
-			 <a href="/register">Register</a>
+      <div>
+      <a href="/register">Register</a>
+      </div>
 			 <a href="/delete">Delete your Account</a>
 			 <h1>Meno-Time</h1>
 			 <div>
@@ -62,6 +64,6 @@
 		{% endif %}
 		{% endwith %}
         {% block content %}
-	{% endblock %}	 
+	{% endblock %}
 	</body>
  </html>
