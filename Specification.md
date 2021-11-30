@@ -25,6 +25,9 @@ Nguyen Chau:	 https://github.com/nguyenbo7
 Rogelio Ibarra:	https://github.com/Rogelio-42
 
 
+#### III)Main Use Cases:
+1) Login 
+2) Signup/Register
 
 #### III) Use cases name:
 
@@ -63,75 +66,122 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 
 #### IV) Use Case Description
 
- 
+#### Main Use Cases:
 
-###### **1) InputOutputFlashCards:**
+###### 1) Signup/Register:**
+
+- Summary: 
+- Actors: User (Students)
+- Preconditions: User is on sign up page 
+- Triggers: The user clicks on the signup/register option
+- Primary Sequence:
+  1) When user clicks on signup/register option they are redirected to a page to create an account
+  2) The user enters in information that is required like username and a password
+  3) After filling in information user clicks on create account
+- Primary Postconditions:
+  1) User account is created then they will be redirected back to the login page
+  2) A flash message will appear at the top saying "you are registered or account created"
+- Alternate Sequences: 
+- Alternate Trigger:
+- Alternate Postconditions: 
+
+###### 2) Login/Sign out:**
+
+- Summary: A login funciton for the user to login into their Account so they do not do things in guest mode
+- Actors: User (Student)
+- Preconditions: 
+  1) User must have made an account that is currently an existing account
+  2) User clicks on Login feature to get redirected to the login page
+  3) User types in their information and clicks login. Whiled logged in their account they have the option to log out
+- Triggers: The user would have to click the login feature to login their account or log out feature to log out their account
+- Primary Sequence:
+  1) User clicks on login 
+  2) They are redirected to the login page
+  3) User enters information that they used to create their account to login
+  4) User clicks login.
+- Primary Postconditions:
+  After logging in user is redirected to home page to access all the features provided. 
+- Alternate Sequences: 
+  User has option to sign out at the top if they wanted to. 
+- Alternate Trigger: User clicks on sign out option 
+- Alternate Postconditions: User is then redirected to Home page. 
+
+
+ ###### **3) InputOutputFlashCards:**
 
 - Summary: Create a randomly generated set of flash cards based on optional input attributes.
-- Actors: customer (Student).
-- Preconditions: The customer has to input the values.
+- Actors: User (Student).
+- Preconditions: The customer has to login to their account to do the feature 
 - Triggers: Customer chooses flashcard activity
 - Primary Sequence:
   1) Customer inputs keywords related to desired flashcards.
   2) Customer inputs desired number of flashcards.
 - Primary Postconditions:
   1) Customer gets a set of flashcards of desired quantity and related to keywords.
-- Alternate Sequences: The customer inputs nothing.
-- Alternate Trigger:
+- Alternate Sequences: The flashcard set will show nothing.
+- Alternate Trigger: The customer inputs nothing.
 - Alternate Postconditions: Customer gets an infinitely long set of random flashcards
 
 
 
-###### **2) shareFlashCards:**
+###### **4) shareFlashCards:**
 
 - Summary: Share Flashcards to different users
 - Actors: customer (Student).
-- Preconditions: 
+- Preconditions: While logged into their account user can share their flashcards that they have created with other users by emailing them. 
 - Triggers: Customer chooses to share.
 - Primary Sequence:
-  1) Customer chooses flashcard(s) to share.
-  2) Customer chooses user(s) to share to.
+  1) Customer chooses the shareFlashcard feature 
+  2) Customer chooses user by email to send to
+  3) User sends the email to share their flash cards they have created. 
 - Primary Postconditions:
-  1) The customer sends chosen flashcards to chosen users.
-- Alternate Sequences: 
-- Alternate Trigger:
+  1) The customer sends chosen flashcards to chosen users by email. 
+- Alternate Sequences: Then they will not be able to share their flashcards that they have created. 
+- Alternate Trigger: That email does not exist 
 - Alternate Postconditions: 
 
 
 
-###### **3) renderNotes:**
+###### **5) renderNotes:**
 
-- Summary: render Notes for customer.
-- Actors: customer (Student).
+- Summary: render/upload markdown file that turns into Notes for customer.
+- Actors: User (Student).
 - Preconditions: 
+  User is signed into an account
 - Triggers: Customer chooses to view notes.
 - Primary Sequence:
-  1) Customer selects Notes to render.
+  1) User clicks on notes feature
+  2) This will send them to a page where they can send notes 
+  3) User browses their markdown file notes to upload
+  4) Then click upload
 - Primary Postconditions:
-  1) The customer has view of Notes.
-- Alternate Sequences: 
-- Alternate Trigger:
-- Alternate Postconditions: 
+  1) After notes are uploaded the user can see their notes right under the upload notes option
+  2) User can click on their notes and can see what was inside those notes.
+- Alternate Sequences: Nothing will be shown or uploaded at all it will be empty
+- Alternate Trigger: User uploads nothing
+- Alternate Postconditions: No notes to click on because nothing was uploaded. 
 
 
+###### **6) ConvertPDF:**
 
-###### **4) ConvertPDF:**
-
-- Summary: convert file to PDF.
-- Actors: customer (Student).
-- Preconditions: 
-- Triggers: Customer chooses to view notes.
+- Summary: Converts notes to pdf
+- Actors: User (Student)
+- Preconditions:
+  1) User has notes that are uploaded. 
+- Triggers: Users chooses notestopdf
 - Primary Sequence:
-  1) Customer chooses to convert a file to PDF.
+  1) User has notes to choose from 
+  2) User chooses a note to convert the file to PDF.
 - Primary Postconditions:
-  1) Customer gets PDF file.
-- Alternate Sequences: 
-- Alternate Trigger:
+  1) Note that user chose is converted to pdf
+  2) User gets pdf file of note
+- Alternate Sequences: If there is nothing uploaded then their will be nothing to be converted
+- Alternate Trigger: No note is converted if there is not a note uploaded
 - Alternate Postconditions: 
 
 
 
-###### **5) shareNotes:**
+###### **7) shareNotes:**
 
 - Summary: help user share notes along other user in the program or share externally.
 - Actors: customer (Student).
@@ -150,7 +200,7 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 
 
 
-###### **6) timeBlocks:**
+###### **8) timeBlocks:**
 
 - Summary: use Markdown blocks to add text to the program with the Markdown language. Markdown blocks support lists, links, bolded and italicized text, and block quotes.
 - Actors: customer (Student).
@@ -170,7 +220,7 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 
 
 
-###### **7) pomodoroTimer:**
+###### **9) pomodoroTimer:**
 
 - Summary: enable user to track the time and use their time effectively and efficiently.
 - Actors: customer (Student).
@@ -189,7 +239,7 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 
 
 
-###### **8) mindMap:**
+###### **10) mindMap:**
 
 - Summary: A broad view of the entire object to show the relationships among pieces.
 - Actors: customer (Student).
@@ -212,12 +262,11 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 
 
 
-###### **9) changeOrder:**
+###### **11) changeOrder:**
 
 - Summary: Change order of flash cards based on how often the customer got answer correct
 - Actors: customer
-
-- Preconditions: The customer has to take a quiz, then the most frequently correct one will be send to the bottom.
+- Preconditions: The customer is to login and have a flashcard set which they will have to take a quiz, then the most frequently correct one will be send to the bottom.
 - Triggers: Customer select the option of reviewing the incorrect answers.
 - Primary Sequence:
   1) The customer has to take a quiz.
@@ -231,12 +280,11 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 
 
 
-###### **10) findText:**
+###### **12) findText:**
 
 - Summary: searching for a specific text on a file.
 - Actors: customer
-
-- Preconditions: The customer has to click on a icon of searching text.
+- Preconditions: User has to be signed in and have notes uploaded. 
 - Triggers: Customer enters a text that needed to be searched
 - Primary Sequence:
   1) Click on the search text icon
@@ -250,7 +298,7 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 
 
 
-###### **11) renameRegular:**
+###### **13) renameRegular:**
 
 - Summary: rename a file by using regular expression.
 - Actors: customer
@@ -269,7 +317,7 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 
 
 
-###### **12) createGraph:**
+###### **14) createGraph:**
 
 - Summary: show visual relationships between subjects by different type of graph.
 - Actors: customer
@@ -287,26 +335,25 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 
 
 
-###### **13) trackHour:**
+###### **15) trackHour:**
 
 - Summary: Tracks the amount of hours of work the user has done each day.
 - Actors: User(student)
 - Preconditions: Student logs in to their account.
-- Triggers:  When signed in and select study options.
+- Triggers:  When signed in and select track hour feature
 - Primary Sequence:
-  1) User selects study option they want to do.
-  2) The system will track the amount of hours they do.
-  3) System tracks and shows the amount of hours user has done.
-  4) User close apps.
+  1) User is signed in and can access the track hour feature
+  2) When moved to the track hour page there is a timer that will go like a stop watch
+  3) The timer will go on and the student can track how long they have done work and studied.
 - Primary Postconditions:
-  1) User can see hours they have done each day.
+  1) User can see hours they of how long they been studying for. 
 - Alternate Sequences: The user enters in a wrong account or the user does not log in. That means the system can not track the hours done for the account.
 - Alternate Trigger: That the user is signed in guest mode and does their studying.
 - Alternate Postconditions: the hours of the user are not tracked. That means the student can not see the hours they spent each day.
 
 
 
-###### **14) toDo:**
+###### **16) toDo:**
 
 - Summary: A todo list for the student that they created or suggested so the student knows what they should focus on that day and days after.
 - Actors: User(student)
@@ -327,7 +374,7 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 
 
 
-###### **15) visualizeHours:**
+###### **17) visualizeHours:**
 
 - Summary: show the hours needed to work on that day and show the work done for the work needed.
 - Actors: User(student)
@@ -346,7 +393,7 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 - Alternate Postconditions: No hours and work are shown. User will not be able to visualize the hours and see the amount of work they have to do each day.
 
 
-###### **16) deleteAccount:**
+###### **18) deleteAccount:**
 
 - Summary: Allows the user to be able to delete their account from our website.
 - Actors: User(student)
