@@ -8,13 +8,13 @@ Our web features
 
   - InputOutputFlashCards
 
-  - Change Order
-
   - Share FlashCards
 
   - Render Notes
 
   - ShareNotes
+
+  - findText
 
   - To-do List
 
@@ -22,4 +22,4 @@ Our web features
 
   - trackHour
 
-  - visualize Hour
+  - deleteAccount
