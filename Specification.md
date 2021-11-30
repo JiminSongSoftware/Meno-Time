@@ -58,6 +58,7 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 
 15) visualizeHour
 
+16) deleteAccount
 
 
 #### IV) Use Case Description
