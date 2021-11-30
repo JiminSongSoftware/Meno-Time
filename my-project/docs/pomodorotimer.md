@@ -22,7 +22,8 @@ We create a countdown to count the time from 25 min back to zero
 User can reset the time, and pausse the time
 Every 25 min of working, user will have 5 min break.
 <p>pomodoroTimer.html</p>
-```html
+
+```HTML
 <h1>Pomodoro Timer</h1>
 
 <div class="pomodoroTimer_container">
