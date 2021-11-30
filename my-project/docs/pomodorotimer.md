@@ -53,6 +53,7 @@ Every 25 min of working, user will have 5 min break.
 <p>The logic</p>
 pomodoroTimer.js
 ```Javascript
+
 var start = document.getElementById('start');
 var stop  = document.getElementById('stop');
 var reset = document.getElementById('reset');
@@ -73,7 +74,6 @@ start.addEventListener('click', function(){
         alert("Timer is already running, Press Ok to continue");
     }
 })
-
 reset.addEventListener('click', function(){
     wm.innerText = 25;
     ws.innerText = "00";
@@ -90,8 +90,6 @@ stop.addEventListener('click', function(){
     stopInterval()
     startTimer = undefined;
 })
-
-
 //Start Timer Function
 function timer(){
     //Work Timer Countdown
@@ -101,7 +99,6 @@ function timer(){
         ws.innerText = 59;
         wm.innerText--;
     }
-
     //Break Timer Countdown
     if(wm.innerText == 0 && ws.innerText == 0){
         if(bs.innerText != 0){
@@ -112,7 +109,6 @@ function timer(){
         }
     }
 }
-
 //Stop Timer Function
 function stopInterval(){
     clearInterval(startTimer);
