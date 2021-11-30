@@ -107,7 +107,8 @@ function stopInterval()
 }
 ```
 style.css (trackHour part)
-'''
+
+'''css
 .pomodoroTimer_container {
   height: 200px;
   width: 500px;
