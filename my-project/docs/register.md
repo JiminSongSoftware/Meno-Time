@@ -18,6 +18,8 @@ This is our import Flask library
     from myapp.models import User, Post, todo_list
 ```
 
+We can take in a username and password to create an account
+
 routes.py
 
 ```python 
