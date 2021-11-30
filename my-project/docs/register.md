@@ -33,6 +33,7 @@ def register():
         flash('You are registered', 'error')
         return redirect("/login")
     return render_template("register.html",form=form)
+```
 
 register.html
 
