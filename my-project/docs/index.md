@@ -1,6 +1,6 @@
-# Welcome to MkDocs
+# Welcome to Meno-Time
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+For full source code visit [github.com](https://github.com/nguyenbo7/Team11_project).
 
 ## Commands
 
@@ -10,7 +10,7 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 * `MkLorum -h` - Print help message and exit.
 
 ## Project layout
-
+```python
 .
 ├── README.md
 ├── Specification.md
@@ -60,3 +60,4 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 │       └── trackHour.html
 ├── requirements.txt
 └── run.py
+```
