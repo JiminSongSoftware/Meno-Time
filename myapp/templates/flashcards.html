@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section>
+        <div class="flashc_container">
+            <div id="create_card">
+                <h2>Create Flashcard</h2>
+
+                <label for="question">Term</label>
+                <textarea id="question" maxlength="200"></textarea>
+                <label for="answer" maxlength="500">Definition</label>
+                <br>
+                <textarea id="answer"></textarea>
+
+                <button id="save_card" class="flashc_btn">Add Card</button>
+                <button id="delete" class="flashc_btn">Delete All</button>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="flashc_container">
+            <div id="flashcards"></div>
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='flashc.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Note</h1>
+<p>Upload your note! We will organize them for you!</p>
+<p>------------------------------------</p>
+<p>*Only md files are allowed to upload*</p>
+<p>------------------------------------</p>
+<form method="POST" novalidate enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        {% if form.file.errors %}
+        <ul class="errors">
+                {% for error in form.file.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+        </ul>
+        {% endif %}
+        <p> {{ form.file }} </p>
+        <p>------------------------------------</p>
+        <p> {{ form.submit() }} </p>
+        <p>------------------------------------</p>
+</form>
+<h2> {{title}} </h2>
+<ul>
+        {% for note_title in note_titles %}
+        <li>
+                <a href="{{ url_for('show_note', title=note_title) }}">
+                        {{ note_title }}
+                </a>
+        </li>
+        {% endfor %}
+</ul>
+{% endblock %}

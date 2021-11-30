@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Track Hour</h1>
+
+<div class="pomodoroTimer_container">
+    <p id="work" class="label">Time:</p>
+
+    <!--Timer-->
+    <div id="work-timer" class="pomodoroTimer">
+        <p id="w_hours">00</p>
+        <p class="semicolon">:</p>
+        <p id="w_minutes">00</p>
+        <p class="semicolon">:</p>
+        <p id="w_seconds">00</p>
+    </div>
+
+    <button id="start" class="btn">Start</button>
+    <button id="stop"  class="btn">Pause</button>
+    <button id="reset" class="btn">Reset</button>
+</div>
+<script src="{{ url_for('static', filename='trackHour.js') }}"></script>
+{% endblock %}

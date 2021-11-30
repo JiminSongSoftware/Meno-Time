@@ -1,0 +1,4 @@
+flask==2.0.2
+Flask_Mail==0.9.1
+Werkzeug==2.0.2
+markdown==4.8.2
