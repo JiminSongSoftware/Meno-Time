@@ -103,16 +103,16 @@ p {
   grid-area: 2 / 4 / 2 / 4;
 }
 
-.btn {
+.btnz {
   align-self: center;
   justify-self: center;
-  color: #b93170;
+  color: #3a4041;
   font-weight: 500;
   font-size: 25px;
 }
-.btn:hover {
-  color: aquamarine;
-  border: 2px solid white;
+.btnz:hover {
+  color: #b93170;
+  border: 2px solid #b93170;
 }
 
 #start {
@@ -131,28 +131,14 @@ p {
 }
 /*========== Flashcards Section ==========*/
 .flashc_container {
-  width: 1000px;
   margin-top: 80px;
 }
 .flc_text {
   color: whitesmoke;
 }
 
-.flashc_btn {
-  padding: 8px;
-  cursor: pointer;
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  background: aquamarine;
-}
-
-.flashc_btn:hover {
-  color: whitesmoke;
-  background-color: #b93170;
-}
-
 #create_card {
-  width: 370px;
+  width: 400px;
   margin: auto;
   padding: 20px;
   margin-top: 10px;
@@ -173,6 +159,9 @@ p {
 
 #create_card button {
   width: fit-content;
+}
+#save_card {
+  margin-top: 20px;
 }
 
 #flashcards {
