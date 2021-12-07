@@ -57,6 +57,11 @@ p {
 .home__buttons {
   margin-top: 40px;
 }
+@media screen and (max-width: 992px) {
+  .home__img_container {
+    display: none;
+  }
+}
 /*========== Pomodoro Timer Section ==========*/
 .pomodoroTimer_container {
   height: 300px;
