@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+
     <h1>Pomodoro Timer</h1>
 
     <div class="pomodoroTimer_container">
@@ -25,5 +26,19 @@
         <button id="stop"  class="btn">Pause</button>
         <button id="reset" class="btn">Reset</button>
     </div>
+
+    <!--Already cite the source from the internet -->
+    <div class="tenor-gif-embed squid__gif" data-postid="23490293" 
+        data-share-method="host" data-aspect-ratio="0.896875" data-width="300px">
+        <a href="https://tenor.com/view/squid-game-squid-game-ez-guard-gif-23490293">
+            Squid Game Ez GIF
+        </a>
+        from
+        <a href="https://tenor.com/search/squid+game-gifs">
+            Squid Game GIFs
+        </a>
+    </div>
+
+    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
     <script src="{{ url_for('static', filename='pomodoroTimer.js') }}"></script>
 {% endblock %}
