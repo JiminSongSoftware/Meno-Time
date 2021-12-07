@@ -1,4 +1,58 @@
-/*Pomodoro Timer Section==========================================*/
+/*========== Base ==========*/
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.button {
+  display: inline-block;
+  background-color: #b93170;
+  color: whitesmoke;
+  padding: 1rem 1.75rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.button:hover {
+  color: whitesmoke;
+  background-color: #3a4041;
+}
+
+/*========== Splash Page__Home Section ==========*/
+.home__container {
+  display: flex;
+  gap: 40px;
+  margin-top: 100px;
+}
+.home__img {
+  height: 550px;
+  justify-self: center;
+  margin: 40px;
+}
+.home__title {
+  font-size: 80px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.home__subtitle {
+  font-size: 30px;
+  font-weight: 600;
+  color: #b93170;
+  margin-bottom: 30px;
+}
+.home__list {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.home__buttons {
+  margin-top: 40px;
+}
+/*========== Pomodoro Timer Section ==========*/
 .pomodoroTimer_container {
   height: 200px;
   width: 500px;

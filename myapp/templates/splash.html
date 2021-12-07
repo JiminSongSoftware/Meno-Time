@@ -1,8 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>***{{ title }}***</h2>
+<!--==================== HOME ====================-->
+<section class="home__container">
+    <div class="home__img_container">
+        <img src="../static/img/squidGame_home.png" alt="" class="home__img">
+    </div>
 
+    <div class="home__data_container">
+        <p class="home__title">Meno Time</p>
+        <p class="home__subtitle">First Study Metaverse<br> Learn to Earn Crypto</p>
+        <p class="home__list_container">
+            <ul>
+                <li class="home__list">3D Flashcards</li>
+                <li class="home__list">Pomodoro Timer</li>
+                <li class="home__list">Tracking Hours</li>
+                <li class="home__list">Smart Note Taking</li>
+            </ul>
+        </p>
+        <div class="home__buttons">
+            <a href="/login" class="button">Study Now</a>
+        </div>
+    </div>
+</section>
 {% endblock  %}
 			 
 
