@@ -18,10 +18,10 @@ flashcardMaker = (text) => {
 
   flashcard.className = 'flashcard';
 
-  question.setAttribute("style", "border-top:1px solid red; padding: 15px; margin-top:30px");
+  question.setAttribute("style", "border-top:1px solid #b93170; padding: 15px; margin-top:30px");
   question.textContent = text.my_question;
 
-  answer.setAttribute("style", "text-align:center; display:none; color:orangered");
+  answer.setAttribute("style", "text-align:center; display:none; color:#b93170");
   answer.textContent = text.my_answer;
 
   flashcard.appendChild(question);

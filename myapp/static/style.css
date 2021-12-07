@@ -12,6 +12,7 @@ img {
   display: inline-block;
   background-color: #b93170;
   color: whitesmoke;
+  font-size: 25px;
   padding: 1rem 1.75rem;
   border-radius: 0.5rem;
   font-weight: 600;
@@ -126,7 +127,15 @@ p {
   grid-area: 3 / 4 / 3 / 4;
 }
 
-/*Flashcard Section==========================================*/
+/*========== Flashcards Section ==========*/
+.flashc_container {
+  width: 1000px;
+  margin-top: 80px;
+}
+.flc_text {
+  color: whitesmoke;
+}
+
 .flashc_btn {
   padding: 8px;
   cursor: pointer;
@@ -136,12 +145,8 @@ p {
 }
 
 .flashc_btn:hover {
-  background-color: orangered;
-}
-
-.flashc_container {
-  width: 1000px;
-  margin: auto;
+  color: whitesmoke;
+  background-color: #b93170;
 }
 
 #create_card {
@@ -149,19 +154,18 @@ p {
   margin: auto;
   padding: 20px;
   margin-top: 10px;
-  background: whitesmoke;
+  background: #3a4041;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.9);
 }
 
 #create_card h2 {
-  color: black;
+  color: whitesmoke;
   text-align: center;
 }
 
 #create_card textarea {
   width: 100%;
   border-radius: 5px;
-  font-family: inherit;
   border: 1px solid lightgray;
 }
 
