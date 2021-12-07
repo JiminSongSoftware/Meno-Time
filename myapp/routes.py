@@ -11,9 +11,9 @@ from myapp.forms import LoginForm, RegisterForm, FileForm, uploadForm
 from myapp.models import User, Post, todo_list\
 
 @myapp_obj.route('/')
-def hello():
+def splash():
     title = 'Meno-Time HomePage'
-    return render_template("hello.html", title=title)
+    return render_template("splash.html", title=title)
 
 @myapp_obj.route('/register' ,methods=['GET','POST'])
 def register():
