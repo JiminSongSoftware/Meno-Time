@@ -1,23 +1,34 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Track Hour</h1>
+    <h1>Track Hour</h1>
 
-<div class="pomodoroTimer_container">
-    <p id="work" class="label">Time:</p>
+    <div class="pomodoroTimer_container">
+        <p id="work" class="label">Time:</p>
 
-    <!--Timer-->
-    <div id="work-timer" class="pomodoroTimer">
-        <p id="w_hours">00</p>
-        <p class="semicolon">:</p>
-        <p id="w_minutes">00</p>
-        <p class="semicolon">:</p>
-        <p id="w_seconds">00</p>
+        <!--Timer-->
+        <div id="work-timer" class="pomodoroTimer">
+            <p id="w_hours">00</p>
+            <p class="semicolon">:</p>
+            <p id="w_minutes">00</p>
+            <p class="semicolon">:</p>
+            <p id="w_seconds">00</p>
+        </div>
+
+        <button id="start" class="btnz">Start</button>
+        <button id="stop"  class="btnz">Pause</button>
+        <button id="reset" class="btnz">Reset</button>
     </div>
 
-    <button id="start" class="btnz">Start</button>
-    <button id="stop"  class="btnz">Pause</button>
-    <button id="reset" class="btnz">Reset</button>
-</div>
-<script src="{{ url_for('static', filename='trackHour.js') }}"></script>
+    <div class="tenor-gif-embed" data-postid="23376155" data-share-method="host" data-aspect-ratio="1.33891" data-width="480px">
+        <a href="https://tenor.com/view/squid-game-red-light-green-light-doll-trendizisst-gif-23376155">
+            Squid Game Red Light Green Light GIF
+        </a>from 
+        <a href="https://tenor.com/search/squid+game-gifs">
+            Squid Game GIFs
+        </a>
+    </div> 
+
+    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <script src="{{ url_for('static', filename='trackHour.js') }}"></script>
 {% endblock %}
