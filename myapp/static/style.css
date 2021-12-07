@@ -54,6 +54,12 @@ p {
   font-weight: 500;
   margin-bottom: 15px;
 }
+.home__link {
+  color: #3a4041;
+}
+.home__link:hover {
+  color: #b93170;
+}
 .home__buttons {
   margin-top: 40px;
 }

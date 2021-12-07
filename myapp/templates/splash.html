@@ -3,26 +3,52 @@
 {% block content %}
 <!--==================== HOME ====================-->
 <section class="home__container">
-
-    <div class="home__img_container">
-        <img src="../static/img/squidGame_home.png" alt="" class="home__img">
-    </div>
-
-    <div class="home__data_container">
-        <p class="home__title">Meno Time</p>
-        <p class="home__subtitle">First Study Metaverse<br> Learn to Earn Crypto</p>
-        <p class="home__list_container">
-            <ul>
-                <li class="home__list">3D Flashcards</li>
-                <li class="home__list">Pomodoro Timer</li>
-                <li class="home__list">Tracking Hours</li>
-                <li class="home__list">Smart Note Taking</li>
-            </ul>
-        </p>
-        <div class="home__buttons">
-            <a href="/login" class="button">Study Now</a>
+    {% if not current_user.is_authenticated %}
+        <div class="home__img_container">
+            <img src="../static/img/squidGame_home.png" alt="" class="home__img">
         </div>
-    </div>
+
+        <div class="home__data_container">
+            <p class="home__title">Meno Time</p>
+            <p class="home__subtitle">First Study Metaverse<br> Learn to Earn Crypto</p>
+            <p class="home__list_container">
+                <ul>
+                    <li class="home__list">3D Flashcards</li>
+                    <li class="home__list">Pomodoro Timer</li>
+                    <li class="home__list">Tracking Hours</li>
+                    <li class="home__list">Smart Note Taking</li>
+                </ul>
+            </p>
+            <div class="home__buttons">
+                <a href="/login" class="button">Study Now</a>
+            </div>
+        </div>
+    {% else %}
+        <div class="home__img_container">
+            <img src="../static/img/user_img_cover.png" alt="" class="home__img">
+        </div>
+
+        <div class="home__data_container">
+            <p class="home__title">Meno Time</p>
+            <p class="home__subtitle">Welcome Back<br></p>
+            <p class="home__list_container">
+                <ul>
+                    <li class="home__list"> 
+                        <a class="home__link" href="/renderFlashCard">3D Flashcards</a>
+                    </li>
+                    <li class="home__list">
+                        <a class="home__link" href="/pomodoroTimer">Pomodoro Timer</a>
+                    </li>
+                    <li class="home__list">
+                        <a class="home__link" href="/trackHours">Tracking Hours</a>
+                    </li>
+                    <li class="home__list">
+                        <a class="home__link" href="/notes">Smart Note Taking</a>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    {% endif %}
 </section>
 {% endblock  %}
 			 
