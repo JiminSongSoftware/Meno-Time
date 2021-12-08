@@ -122,9 +122,26 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 - Alternate Trigger: The customer inputs nothing.
 - Alternate Postconditions: Customer gets an infinitely long set of random flashcards
 
+###### **4) deleteFlashcards:**
+
+- Summary: Allows the user to be able to delete their flashcards so that they can add more. 
+- Actors: User(student)
+
+- Preconditions: Student must have an account and created flashcards
+- Triggers:  User now can select the delete flashcard options to delete their flashcards. 
+- Primary Sequence:
+  1) If user is logged in and have created flashcards set
+  2) They now have the option to delete all their flashcards to create new ones
+- Primary Postconditions:
+  1) With their flashcards deleted it becomes an empty canvas 
+  2) With an empty canvas they can now add more flashcards that the use would like to add. 
+- Alternate Sequences: User does not have any flashcards created 
+- Alternate Trigger: The delete option would not work because no flashcards are there to be able to delete. 
+- Alternate Postconditions: If no flashcards set are created then there should not be anything to be able to delete so the delete option would not work. 
 
 
-###### **4) shareFlashCards:**
+
+###### **5) shareFlashCards:**
 
 - Summary: Share Flashcards to different users
 - Actors: customer (Student).
@@ -138,11 +155,11 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
   1) The customer sends chosen flashcards to chosen users by email. 
 - Alternate Sequences: Then they will not be able to share their flashcards that they have created. 
 - Alternate Trigger: That email does not exist 
-- Alternate Postconditions: 
+- Alternate Postconditions: With the email not existing they cannot send it to that person. 
 
 
 
-###### **5) renderNotes:**
+###### **6) renderNotes:**
 
 - Summary: render/upload markdown file that turns into Notes for customer.
 - Actors: User (Student).
@@ -160,26 +177,6 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 - Alternate Sequences: Nothing will be shown or uploaded at all it will be empty
 - Alternate Trigger: User uploads nothing
 - Alternate Postconditions: No notes to click on because nothing was uploaded. 
-
-
-###### **6) ConvertPDF:**
-
-- Summary: Converts notes to pdf
-- Actors: User (Student)
-- Preconditions:
-  1) User has notes that are uploaded. 
-- Triggers: Users chooses notestopdf
-- Primary Sequence:
-  1) User has notes to choose from 
-  2) User chooses a note to convert the file to PDF.
-- Primary Postconditions:
-  1) Note that user chose is converted to pdf
-  2) User gets pdf file of note
-- Alternate Sequences: If there is nothing uploaded then their will be nothing to be converted
-- Alternate Trigger: No note is converted if there is not a note uploaded
-- Alternate Postconditions: 
-
-
 
 ###### **7) shareNotes:**
 
@@ -199,28 +196,7 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 - Alternate Postconditions: Users will be notified upon completion of log-in or guest-log-in.
 
 
-
-###### **8) timeBlocks:**
-
-- Summary: use Markdown blocks to add text to the program with the Markdown language. Markdown blocks support lists, links, bolded and italicized text, and block quotes.
-- Actors: customer (Student).
-- Preconditions: Users are logged in their accounts.
-- Triggers: Once logged in, users will see option for creating markdown blocks to add text to the program.
-- Primary Sequence:
-  1) Once the user is signed in the system prompts the markdown blocks box.
-  2) With the blocks, shown user can type in text to the program.
-  3) Users will be able to type in links, bolded and italicized texts.
-  4) Once finished user will be able to click save button and post.
-- Primary Postconditions:
-  1) When the markdown block option is showing, user will have to click the box to enable the feature.
-  2) With what is selected, the feature will help user save notes and share notes.
-- Alternate Sequences: The user does not click save button. If the user does not save, it will show guide message to save or discard.
-- Alternate Trigger: N/A.
-- Alternate Postconditions: Users will be able to see that they have saved the notes.
-
-
-
-###### **9) pomodoroTimer:**
+###### **8) pomodoroTimer:**
 
 - Summary: enable user to track the time and use their time effectively and efficiently.
 - Actors: customer (Student).
@@ -238,104 +214,7 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 - Alternate Postconditions: Timers will not run. User will not be able to use timer to study with..
 
 
-
-###### **10) mindMap:**
-
-- Summary: A broad view of the entire object to show the relationships among pieces.
-- Actors: customer (Student).
-
-- Preconditions: The customer has to input the values.
-- Triggers: Customer select the option of the overview of some specific topic.
-- Primary Sequence:
-  1) The customer has to input the central idea (starting point, or the root).
-  2) Add the branches to the central idea.
-  3) Continue to input smaller branches as desired.
-  4) The customer can edit like adding keywords or changing the color of the branch.
-- Primary Postconditions:
-  1) The customer has an overview of the subject.
-  2) Recognize the relationship between branches.
-- Alternate Sequences: The customer enter only 1 input (cannot show the relationship to others)
-- Alternate Trigger: The system shows a message that requires customer to input more values.
-- Alternate Postconditions:
-
-
-
-
-
-###### **11) changeOrder:**
-
-- Summary: Change order of flash cards based on how often the customer got answer correct
-- Actors: customer
-- Preconditions: The customer is to login and have a flashcard set which they will have to take a quiz, then the most frequently correct one will be send to the bottom.
-- Triggers: Customer select the option of reviewing the incorrect answers.
-- Primary Sequence:
-  1) The customer has to take a quiz.
-  2) Incorrect answers would be repeated more frequently and place on the top.
-  3) The order continues to be changed until all answers are correct.
-- Primary Postconditions:
-  1) The customer has an idea of what need to review more.
-- Alternate Sequences: none
-- Alternate Trigger: none.
-- Alternate Postconditions: none
-
-
-
-###### **12) findText:**
-
-- Summary: searching for a specific text on a file.
-- Actors: customer
-- Preconditions: User has to be signed in and have notes uploaded. 
-- Triggers: Customer enters a text that needed to be searched
-- Primary Sequence:
-  1) Click on the search text icon
-  2) Enter a text
-  3) Click on upward or downward arrow to show the replicated text at different positions.
-- Primary Postconditions:
-  1) The customer can see the place of the words that they looking for
-- Alternate Sequences: No text is not appear.
-- Alternate Trigger: required another input or just click X to close the searching icon.
-- Alternate Postconditions: none
-
-
-
-###### **13) renameRegular:**
-
-- Summary: rename a file by using regular expression.
-- Actors: customer
-
-- Preconditions: The customer has to on the 3 dots on the file to edit it.
-- Triggers: Customer click on rename a file
-- Primary Sequence:
-  1) Click 3 dots to edit a file (find a file faster by using findText)
-  2) Click on rename a file
-  3) Click OK or Cancel to accept the change.
-- Primary Postconditions:
-  1) The customer can change a name of a file as they want
-- Alternate Sequences: The new name is already exists.
-- Alternate Trigger: required a different name for the file.
-- Alternate Postconditions: none
-
-
-
-###### **14) createGraph:**
-
-- Summary: show visual relationships between subjects by different type of graph.
-- Actors: customer
-- Preconditions: The customer has to an option graphing
-- Triggers: Customer click on the type of graph
-- Primary Sequence:
-  1) Choose a graph option
-  2) Choose a type of graph
-  3) Input the values, then connect the nodes or edges as desired
-- Primary Postconditions:
-  1) The customer can have a better view on a graph
-- Alternate Sequences: none
-- Alternate Trigger: none
-- Alternate Postconditions: none
-
-
-
-###### **15) trackHour:**
+###### **9) trackHour:**
 
 - Summary: Tracks the amount of hours of work the user has done each day.
 - Actors: User(student)
@@ -352,8 +231,7 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 - Alternate Postconditions: the hours of the user are not tracked. That means the student can not see the hours they spent each day.
 
 
-
-###### **16) toDo:**
+###### **10) toDo:**
 
 - Summary: A todo list for the student that they created or suggested so the student knows what they should focus on that day and days after.
 - Actors: User(student)
@@ -372,9 +250,42 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 - Alternate Trigger: N/A.
 - Alternate Postconditions: (No todo list is shown) User wouldn't know what they should focus on for that day.
 
+###### **11) editToDoList:**
 
+- Summary: Allows the user to be able to edit their ToDo list by removing things they did not do or edit the list they listed.
 
-###### **17) visualizeHours:**
+- Preconditions: Student must be logged in and have a ToDo list created. 
+- Triggers:  User selects edit option to then be able to edit their ToDo list.
+- Primary Sequence:
+  1) If user has created an existing account
+  2) They can then make a ToDo list
+  3) After making their ToDo list the user can now edit it. 
+- Primary Postconditions:
+  1) The users can edit their todo list so that they made a mistake on it. It is now fixed 
+  2) Now the user has a updated ToDo list. 
+- Alternate Sequences: User does not have a ToDo list so their is nothing to edit.
+- Alternate Trigger: They try to edit their todo list but with nothing added for them ToDo they can not edit anything.
+- Alternate Postconditions: Will not have a edited todo list with no ToDo list ever created. 
+
+###### **12) deleteToDoList:**
+
+- Summary: Allows the user to delete things off their ToDo list. 
+- Actors: User(student)
+
+- Preconditions: Student must be logged in and have a ToDo list created. 
+- Triggers:  User can select delete option which can delete some of the users things that they listed. 
+- Primary Sequence:
+  1) If user has created an existing account
+  2) They can then make a ToDo list
+  3) If something on their list is not what they want they can delete it as an option.
+- Primary Postconditions:
+  1) When a user created a mistake in their ToDo list they can not click the delete option 
+  2) Then when deleted the list is now off the ToDo list. 
+- Alternate Sequences: User does not have a ToDo list so they can not delete anything off the todo list
+- Alternate Trigger: When clicking on the delete option for the ToDo list with nothing listed nothing will be deleted. 
+- Alternate Postconditions: Will not have anything deleted off their todo list with no ToDo list ever created.
+
+###### **13) visualizeHours:**
 
 - Summary: show the hours needed to work on that day and show the work done for the work needed.
 - Actors: User(student)
@@ -393,7 +304,7 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 - Alternate Postconditions: No hours and work are shown. User will not be able to visualize the hours and see the amount of work they have to do each day.
 
 
-###### **18) deleteAccount:**
+###### **14) deleteAccount:**
 
 - Summary: Allows the user to be able to delete their account from our website.
 - Actors: User(student)
@@ -408,9 +319,6 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 - Alternate Sequences: User does not have an account so there wont be an account to delete.
 - Alternate Trigger: N/A.
 - Alternate Postconditions: Will not have an account to delete if there is not an account that exists. 
-
-
-
 
 
 #### V) Non-functional Requirements
