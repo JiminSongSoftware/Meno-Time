@@ -31,37 +31,27 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 
 #### III) Use cases name:
 
-1) InputOutputFlashCards
+3) InputOutputFlashCards
 
-2) shareFlashCards
+4) deleteFlashcards
 
-3) renderNotes
+5) shareFlashCards
 
-4) ConvertPdf
+6) renderNotes
 
-5) shareNotes
+7) shareNotes
 
-6) timeBlocks
+8) pomodoroTimer
 
-7) pomodoroTimer
+9) trackHour
 
-8) mindMap
+10) toDo
 
-9) changeOrder
+11) deletetoDoList
 
-10) findText
+12) visualizeHour
 
-11) renameRegular
-
-12) createGraph
-
-13) trackHour
-
-14) toDo
-
-15) visualizeHour
-
-16) deleteAccount
+13) deleteAccount
 
 
 #### IV) Use Case Description
@@ -250,24 +240,7 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 - Alternate Trigger: N/A.
 - Alternate Postconditions: (No todo list is shown) User wouldn't know what they should focus on for that day.
 
-###### **11) editToDoList:**
-
-- Summary: Allows the user to be able to edit their ToDo list by removing things they did not do or edit the list they listed.
-
-- Preconditions: Student must be logged in and have a ToDo list created. 
-- Triggers:  User selects edit option to then be able to edit their ToDo list.
-- Primary Sequence:
-  1) If user has created an existing account
-  2) They can then make a ToDo list
-  3) After making their ToDo list the user can now edit it. 
-- Primary Postconditions:
-  1) The users can edit their todo list so that they made a mistake on it. It is now fixed 
-  2) Now the user has a updated ToDo list. 
-- Alternate Sequences: User does not have a ToDo list so their is nothing to edit.
-- Alternate Trigger: They try to edit their todo list but with nothing added for them ToDo they can not edit anything.
-- Alternate Postconditions: Will not have a edited todo list with no ToDo list ever created. 
-
-###### **12) deleteToDoList:**
+###### **11) deleteToDoList:**
 
 - Summary: Allows the user to delete things off their ToDo list. 
 - Actors: User(student)
@@ -285,7 +258,7 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 - Alternate Trigger: When clicking on the delete option for the ToDo list with nothing listed nothing will be deleted. 
 - Alternate Postconditions: Will not have anything deleted off their todo list with no ToDo list ever created.
 
-###### **13) visualizeHours:**
+###### **12) visualizeHours:**
 
 - Summary: show the hours needed to work on that day and show the work done for the work needed.
 - Actors: User(student)
@@ -304,7 +277,7 @@ Rogelio Ibarra:	https://github.com/Rogelio-42
 - Alternate Postconditions: No hours and work are shown. User will not be able to visualize the hours and see the amount of work they have to do each day.
 
 
-###### **14) deleteAccount:**
+###### **13) deleteAccount:**
 
 - Summary: Allows the user to be able to delete their account from our website.
 - Actors: User(student)
