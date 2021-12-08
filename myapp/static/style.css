@@ -14,6 +14,14 @@ p {
 body {
   background-color: #bfb2a7;
 }
+.center_div {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .button {
   display: inline-block;

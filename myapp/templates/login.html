@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="center_div">
+    <h1>Login</h1>
 
-<h1>Login</h1>
-
-<form method = "POST" novalidate > 
+    <form method = "POST" novalidate > 
         {{ form.hidden_tag() }}
 
 	<p> {{ form.username.label }} <br>
@@ -19,5 +19,7 @@
 	<p> {{ form.submit() }} </p>
 
 </form>
+</div>
+
 {% endblock %}
 
