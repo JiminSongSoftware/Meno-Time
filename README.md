@@ -23,3 +23,7 @@ Our web features
   - trackHour
 
   - deleteAccount
+
+  - deleteFlashcards
+
+  - deleteTodoList
