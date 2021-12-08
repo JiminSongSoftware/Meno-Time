@@ -4,6 +4,7 @@
 <!--==================== HOME ====================-->
 <section class="home__container">
     {% if not current_user.is_authenticated %}
+    <div class="home__img_cover">
         <div class="home__img_container">
             <img src="../static/img/squidGame_home.png" alt="" class="home__img">
         </div>
@@ -23,7 +24,20 @@
                 <a href="/login" class="button">Study Now</a>
             </div>
         </div>
+    </div>
+
+    <h2>Our Features</h2>
+    <div class="home__img_feature">
+        <img src="../static/img/home_flashc.jfif" alt="" class="home__imgz">
+        <img src="../static/img/Shareflashcard.jfif" alt="" class="home__imgz">
+        <img src="../static/img/UploadNotes.jfif" alt="" class="home__imgz">
+        <img src="../static/img/ShareNote.jfif" alt="" class="home__imgz">
+        <img src="../static/img/TodoList.jfif" alt="" class="home__imgz">
+        <img src="../static/img/PomodoroTimer.jfif" alt="" class="home__imgz">
+        <img src="../static/img/TrackHour.jfif" alt="" class="home__imgz">
+    </div>
     {% else %}
+    <div class="home__img_cover">
         <div class="home__img_container">
             <img src="../static/img/user_img_cover.png" alt="" class="home__img">
         </div>
@@ -48,6 +62,9 @@
                 </ul>
             </p>
         </div>
+    </div>
+        
+
     {% endif %}
 </section>
 {% endblock  %}
