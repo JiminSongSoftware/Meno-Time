@@ -13,7 +13,7 @@ This is our import Flask library
 
     from werkzeug.utils import secure_filename
 
-    from myapp import myapp_obj, basedir, db, mail
+    from myapp import application, basedir, db, mail
     from myapp.forms import LoginForm, RegisterForm, FileForm, uploadForm
     from myapp.models import User, Post, todo_list
 ```
@@ -54,7 +54,7 @@ todolist.html
 
 ```python
 routes.py
-@myapp_obj.route('/todolist')
+@application.route('/todolist')
 def todolist():
     title = 'To-Do List'
     complete = todo_list.query.filter_by(complete=True).all()
@@ -62,7 +62,7 @@ def todolist():
 
     return render_template('todolist.html', title = title,complete = complete, incomplete = incomplete)
 
-@myapp_obj.route('/add', methods=['POST'])
+@application.route('/add', methods=['POST'])
 def add():
     todo = todo_list(todo_item = request.form["todoitem"], complete = False)
     db.session.add(todo)
@@ -70,7 +70,7 @@ def add():
 
     return redirect(url_for('todolist'))
 
-@myapp_obj.route('/complete/<id>')
+@application.route('/complete/<id>')
 def complete(id):
     todo = todo_list.query.filter_by(id=int(id)).first()
     todo.complete = True

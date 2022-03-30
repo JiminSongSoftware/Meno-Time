@@ -13,7 +13,7 @@ This is our import Flask library
 
     from werkzeug.utils import secure_filename
 
-    from myapp import myapp_obj, basedir, db, mail
+    from myapp import application, basedir, db, mail
     from myapp.forms import LoginForm, RegisterForm, FileForm, uploadForm
     from myapp.models import User, Post, todo_list
 ```
@@ -63,7 +63,7 @@ logout.html
 
 routes.py
 ```python
-@myapp_obj.route('/login', methods=['GET', 'POST'])
+@application.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
     getuser=User.query.all()
@@ -75,7 +75,7 @@ def login():
 ```
 
 ```python
-@myapp_obj.route('/loggedin')
+@application.route('/loggedin')
 @login_required
 def log():
     flash('You are logged in', 'error')
@@ -83,7 +83,7 @@ def log():
 ```
 
 ```python
-@myapp_obj.route('/logout')
+@application.route('/logout')
 def logout():
     logout_user()
     flash('You are logged out', 'error')

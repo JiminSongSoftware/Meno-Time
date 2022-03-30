@@ -6,26 +6,26 @@ from flask_mail import Mail, Message
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-myapp_obj = flask.Flask(__name__)
+application = flask.Flask(__name__)
 
-myapp_obj.config['MAIL_SERVER'] = 'smtp.gmail.com'
-myapp_obj.config['MAIL_PORT'] = 465
-myapp_obj.config['MAIL_USERNAME'] = "jimin.song.software@gmail.com"
-myapp_obj.config['MAIL_PASSWORD'] = "hnmciiausvxmlvhr"
-myapp_obj.config["MAIL_USE_TLS"] = False
-myapp_obj.config['MAIL_USE_SSL'] = True
+application.config['MAIL_SERVER'] = 'smtp.gmail.com'
+application.config['MAIL_PORT'] = 465
+application.config['MAIL_USERNAME'] = "jimin.song.software@gmail.com"
+application.config['MAIL_PASSWORD'] = "hnmciiausvxmlvhr"
+application.config["MAIL_USE_TLS"] = False
+application.config['MAIL_USE_SSL'] = True
 
-mail = Mail(myapp_obj)
+mail = Mail(application)
 
-myapp_obj.config.from_mapping(
+application.config.from_mapping(
         SECRET_KEY = 'it-dont-matter',
         SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db'),
         SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 )
 
-db = SQLAlchemy(myapp_obj)
-login = LoginManager(myapp_obj)
+db = SQLAlchemy(application)
+login = LoginManager(application)
 login.login_view = 'login'
 
 from myapp import routes, models

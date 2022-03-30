@@ -13,7 +13,7 @@ This is our import Flask library
 
     from werkzeug.utils import secure_filename
 
-    from myapp import myapp_obj, basedir, db, mail
+    from myapp import application, basedir, db, mail
     from myapp.forms import LoginForm, RegisterForm, FileForm, uploadForm
     from myapp.models import User, Post, todo_list
 ```
@@ -66,7 +66,7 @@ note.html
 ```
 routes.py
 ```python
-@myapp_obj.route('/notes', methods=['GET', 'POST'])
+@application.route('/notes', methods=['GET', 'POST'])
 def upload_note():
     title='Note Lists'
 
@@ -89,7 +89,7 @@ def upload_note():
         note_titles=note_titles,
     )
 
-@myapp_obj.route('/note/<title>')
+@application.route('/note/<title>')
 def show_note(title):
     filenames = os.listdir(os.path.join(basedir, 'notes'))
     note_titles = list(sorted(re.sub(r"\.md$", "", filename)

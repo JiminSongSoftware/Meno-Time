@@ -13,7 +13,7 @@ This is our import Flask library
 
     from werkzeug.utils import secure_filename
 
-    from myapp import myapp_obj, basedir, db, mail
+    from myapp import application, basedir, db, mail
     from myapp.forms import LoginForm, RegisterForm, FileForm, uploadForm
     from myapp.models import User, Post, todo_list
 ```
@@ -55,7 +55,7 @@ shareFlashcards.html
 ```
 routes.py
 ```python
-@myapp_obj.route('/shareFlash', methods=['GET', 'POST'])
+@application.route('/shareFlash', methods=['GET', 'POST'])
 def shareFlash():
     title = 'Share Flash'
     if  request.method == "POST":

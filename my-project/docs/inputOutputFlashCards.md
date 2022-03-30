@@ -13,7 +13,7 @@ This is our import Flask library
 
     from werkzeug.utils import secure_filename
 
-    from myapp import myapp_obj, basedir, db, mail
+    from myapp import application, basedir, db, mail
     from myapp.forms import LoginForm, RegisterForm, FileForm, uploadForm
     from myapp.models import User, Post, todo_list
 ```
@@ -123,7 +123,7 @@ addFlashcard = () => {
 routes.py
 
 ```python
-@myapp_obj.route('/renderFlashCard')
+@application.route('/renderFlashCard')
 def flashcards():
     title = 'Flashcards'
     return render_template("flashcards.html", title = title)
