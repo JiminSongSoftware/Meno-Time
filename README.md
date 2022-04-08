@@ -2,7 +2,7 @@ Crafted by Jimin
 Feel free to ask any questions through E-mail: jiminsong.software@gmail.com
 
 [Meno-Time]
-Web: [https://www.menotime.org/]
+Web: [https://www.menotime.org/] [Currently lost the domain]
 
 Using Flask, SQLAlchemy, and JavaScript
 
