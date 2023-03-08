@@ -9,19 +9,19 @@ from flask_mail import Message
 
 from werkzeug.utils import secure_filename
 
-from myapp import application, basedir, db, mail
+from myapp import app, basedir, db, mail
 from myapp.forms import LoginForm, RegisterForm, FileForm, uploadForm
 from myapp.models import User, Post, todo_list\
 
 
 
-@application.route('/')
+@app.route('/')
 def splash():
     title = 'Meno-Time HomePage'
     return render_template("splash.html", title=title)
 
 
-@application.route('/register', methods=['GET', 'POST'])
+@app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
    # all_users = User.query.all()
@@ -36,7 +36,7 @@ def register():
     return render_template("register.html", form=form)
 
 
-@application.route('/login', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
     getuser = User.query.all()
@@ -47,21 +47,21 @@ def login():
     return render_template("login.html", form=form)
 
 
-@application.route('/loggedin')
+@app.route('/loggedin')
 @login_required
 def log():
     flash('You are logged in', 'error')
     return redirect('/')
 
 
-@application.route('/logout')
+@app.route('/logout')
 def logout():
     logout_user()
     flash('You are logged out', 'error')
     return redirect('/')
 
 
-@application.route("/delete",)
+@app.route("/delete",)
 def delete():
     user = User.query.filter_by(id=1).delete()
     db.session.commit()
@@ -69,13 +69,13 @@ def delete():
     return redirect("/register")
 
 
-@application.route('/renderFlashCard')
+@app.route('/renderFlashCard')
 def flashcards():
     title = 'Flashcards'
     return render_template("flashcards.html", title=title)
 
 
-@application.route('/shareFlash', methods=['GET', 'POST'])
+@app.route('/shareFlash', methods=['GET', 'POST'])
 def shareFlash():
     title = 'Share Flash'
     if request.method == "POST":
@@ -98,7 +98,7 @@ def shareFlash():
         return render_template("shareFlashcards.html", title=title)
 
 
-@application.route('/notes', methods=['GET', 'POST'])
+@app.route('/notes', methods=['GET', 'POST'])
 def upload_note():
     title = 'Note Lists'
 
@@ -122,7 +122,7 @@ def upload_note():
                            )
 
 
-@application.route('/note/<title>')
+@app.route('/note/<title>')
 def show_note(title):
     filenames = os.listdir(os.path.join(basedir, 'notes'))
     note_titles = list(sorted(re.sub(r"\.md$", "", filename)
@@ -137,7 +137,7 @@ def show_note(title):
     return redirect('/')
 
 
-@application.route('/shareNotes', methods=['GET', 'POST'])
+@app.route('/shareNotes', methods=['GET', 'POST'])
 def shareNotes():
     title = 'Share Note'
     if request.method == "POST":
@@ -159,7 +159,7 @@ def shareNotes():
         return render_template("shareNote.html", title=title)
 
 
-@application.route('/todolist')
+@app.route('/todolist')
 def todolist():
     title = 'To-Do List'
     complete = todo_list.query.filter_by(complete=True).all()
@@ -168,7 +168,7 @@ def todolist():
     return render_template('todolist.html', title=title, complete=complete, incomplete=incomplete)
 
 
-@application.route('/add', methods=['POST'])
+@app.route('/add', methods=['POST'])
 def add():
     todo = todo_list(todo_item=request.form["todoitem"], complete=False)
     db.session.add(todo)
@@ -177,7 +177,7 @@ def add():
     return redirect(url_for('todolist'))
 
 
-@application.route('/complete/<id>')
+@app.route('/complete/<id>')
 def complete(id):
     todo = todo_list.query.filter_by(id=int(id)).first()
     todo.complete = True
@@ -186,18 +186,13 @@ def complete(id):
     return redirect(url_for('todolist'))
 
 
-@application.route('/pomodoroTimer')
+@app.route('/pomodoroTimer')
 def pomodoroTimer():
     title = 'Pomodoro Timer'
     return render_template("pomodoroTimer.html", title=title)
 
 
-@application.route('/trackHours')
+@app.route('/trackHours')
 def trackHours():
     title = 'Track Hours'
     return render_template("trackHour.html", title=title)
-
-# @application.route('/visualizeHours')
-# def visualizeHours():
-#     title = 'Visualize Hours'
-#     return render_template("visualizeHour.html",title=title)
